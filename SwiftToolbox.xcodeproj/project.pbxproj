@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED6592F12E05EC4C0010673E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6592F02E05EC4C0010673E /* Keychain.swift */; };
 		ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593062E05FBFD0010673E /* KeychainError.swift */; };
+		ED6593092E05FC670010673E /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593082E05FC670010673E /* Machine.swift */; };
 		EDC82A7C2D87866E006BBCAB /* SwiftToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; };
 		EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		ED6592F02E05EC4C0010673E /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		ED6593062E05FBFD0010673E /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		ED6593082E05FC670010673E /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDialogues.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */,
 				ED6592F02E05EC4C0010673E /* Keychain.swift */,
 				ED6593062E05FBFD0010673E /* KeychainError.swift */,
+				ED6593082E05FC670010673E /* Machine.swift */,
 				EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */,
 				EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */,
 			);
@@ -211,6 +214,7 @@
 			files = (
 				ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */,
 				EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */,
+				ED6593092E05FC670010673E /* Machine.swift in Sources */,
 				EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */,
 				ED6592F12E05EC4C0010673E /* Keychain.swift in Sources */,
 			);
