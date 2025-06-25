@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PathSelectorLabelView" customModule="SwiftToolbox" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="Hz6-mo-xeY" id="Ztj-FD-k1P"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WQ2-lh-Aez">
+                    <rect key="frame" x="-7" y="-7" width="115" height="32"/>
+                    <buttonCell key="cell" type="push" title="Select Path..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wF6-D5-Huw">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField focusRingType="none" horizontalHuggingPriority="100" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-2A-ra9">
+                    <rect key="frame" x="107" y="3" width="222" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Htz-mV-o3J"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" placeholderString="...or drag" id="6Fc-qA-PU3">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="Clear cache directory" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-oa-947">
+                    <rect key="frame" x="335" y="3" width="15" height="15"/>
+                    <buttonCell key="cell" type="bevel" alternateTitle="Unset Path" bezelStyle="rounded" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" inset="2" id="Vba-Ob-q5C">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="prZ-oa-947" firstAttribute="centerY" secondItem="WQ2-lh-Aez" secondAttribute="centerY" id="09e-3g-rbc"/>
+                <constraint firstItem="WQ2-lh-Aez" firstAttribute="firstBaseline" secondItem="0Nn-2A-ra9" secondAttribute="firstBaseline" id="LZe-yB-to8"/>
+                <constraint firstItem="WQ2-lh-Aez" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Tjy-mT-tiQ"/>
+                <constraint firstItem="WQ2-lh-Aez" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="b7t-DI-JFf"/>
+                <constraint firstAttribute="trailing" secondItem="prZ-oa-947" secondAttribute="trailing" id="dDw-Nx-kge"/>
+                <constraint firstItem="0Nn-2A-ra9" firstAttribute="leading" secondItem="WQ2-lh-Aez" secondAttribute="trailing" constant="8" symbolic="YES" id="k2M-3d-ffp"/>
+                <constraint firstItem="prZ-oa-947" firstAttribute="leading" secondItem="0Nn-2A-ra9" secondAttribute="trailing" constant="8" symbolic="YES" id="lPO-mt-D7a"/>
+                <constraint firstAttribute="bottom" secondItem="WQ2-lh-Aez" secondAttribute="bottom" id="p3d-DV-zsE"/>
+            </constraints>
+            <point key="canvasLocation" x="9" y="39"/>
+        </customView>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <viewController id="6Qs-gG-EAc" customClass="PathSelectorLabelViewController" customModule="SwiftToolbox" customModuleProvider="target">
+            <connections>
+                <outlet property="pathLabel" destination="0Nn-2A-ra9" id="KrO-NU-yvm"/>
+                <outlet property="selectPathButton" destination="WQ2-lh-Aez" id="Cyu-9O-6Rh"/>
+                <outlet property="unsetPathButton" destination="prZ-oa-947" id="t0Y-40-Ves"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="TjM-0u-6jy"/>
+            </connections>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="NSStopProgressFreestandingTemplate" width="20" height="20"/>
+    </resources>
+</document>

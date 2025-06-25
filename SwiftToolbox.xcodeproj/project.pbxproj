@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED2BCCF82E087C0500B99ECA /* PathSelectorLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BCCF52E087C0500B99ECA /* PathSelectorLabelViewController.swift */; };
+		ED2BCCF92E087C0500B99ECA /* PathSelectorLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */; };
 		ED6592F12E05EC4C0010673E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6592F02E05EC4C0010673E /* Keychain.swift */; };
 		ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593062E05FBFD0010673E /* KeychainError.swift */; };
 		ED6593092E05FC670010673E /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593082E05FC670010673E /* Machine.swift */; };
+		ED65930B2E05FD7B0010673E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65930A2E05FD7B0010673E /* Alerts.swift */; };
 		EDC82A7C2D87866E006BBCAB /* SwiftToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; };
 		EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
@@ -27,9 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED2BCCF52E087C0500B99ECA /* PathSelectorLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSelectorLabelViewController.swift; sourceTree = "<group>"; };
+		ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathSelectorLabelView.xib; sourceTree = "<group>"; };
 		ED6592F02E05EC4C0010673E /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		ED6593062E05FBFD0010673E /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		ED6593082E05FC670010673E /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
+		ED65930A2E05FD7B0010673E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDialogues.swift; sourceTree = "<group>"; };
@@ -64,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2BCCF72E087C0500B99ECA /* PathSelectorLabel */ = {
+			isa = PBXGroup;
+			children = (
+				ED2BCCF52E087C0500B99ECA /* PathSelectorLabelViewController.swift */,
+				ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */,
+			);
+			path = PathSelectorLabel;
+			sourceTree = "<group>";
+		};
 		EDC82A672D87866E006BBCAB = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +100,12 @@
 		EDC82A912D878C61006BBCAB /* SwiftToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				ED65930A2E05FD7B0010673E /* Alerts.swift */,
 				EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */,
 				ED6592F02E05EC4C0010673E /* Keychain.swift */,
 				ED6593062E05FBFD0010673E /* KeychainError.swift */,
 				ED6593082E05FC670010673E /* Machine.swift */,
+				ED2BCCF72E087C0500B99ECA /* PathSelectorLabel */,
 				EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */,
 				EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */,
 			);
@@ -195,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2BCCF92E087C0500B99ECA /* PathSelectorLabelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +234,8 @@
 				EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */,
 				ED6593092E05FC670010673E /* Machine.swift in Sources */,
 				EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */,
+				ED2BCCF82E087C0500B99ECA /* PathSelectorLabelViewController.swift in Sources */,
+				ED65930B2E05FD7B0010673E /* Alerts.swift in Sources */,
 				ED6592F12E05EC4C0010673E /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,13 +278,13 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = zap.zip.SwiftToolbox;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -291,13 +311,13 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = zap.zip.SwiftToolbox;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
