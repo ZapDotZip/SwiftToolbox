@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PathSelectorLabelView" customModule="SwiftToolbox" customModuleProvider="target">
             <connections>
+                <outlet property="controller" destination="6Qs-gG-EAc" id="rgL-Jp-bIM"/>
                 <outlet property="mainView" destination="Hz6-mo-xeY" id="Ztj-FD-k1P"/>
             </connections>
         </customObject>
@@ -22,6 +23,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="selectPathButtonPressed:" target="6Qs-gG-EAc" id="qkB-ma-Grs"/>
+                    </connections>
                 </button>
                 <textField focusRingType="none" horizontalHuggingPriority="100" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-2A-ra9">
                     <rect key="frame" x="107" y="3" width="222" height="16"/>
@@ -40,6 +44,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="resetButtonPressed:" target="6Qs-gG-EAc" id="RwK-Lk-qeD"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>

@@ -6,7 +6,8 @@
 import Cocoa
 
 public class PathSelectorLabelView: NSView {
-	@IBOutlet var mainView: NSView!
+	@IBOutlet private var mainView: NSView!
+	@IBOutlet public var controller: PathSelectorLabelViewController!
 	
 	public required init?(coder: NSCoder) {
 		super.init(coder: coder)
@@ -58,13 +59,9 @@ public class PathSelectorLabelViewController: NSViewController {
 		}
 		set {
 			if #available(macOS 13.0, *) {
-				if let str = newValue?.path() {
-					pathLabel.stringValue = str
-				}
+				pathLabel.stringValue = newValue?.path() ?? ""
 			} else {
-				if let str = newValue?.path {
-					pathLabel.stringValue = str
-				}
+				pathLabel.stringValue = newValue?.path ?? ""
 			}
 			_path = newValue
 		}
