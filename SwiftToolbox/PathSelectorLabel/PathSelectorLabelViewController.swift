@@ -26,13 +26,26 @@ public class PathSelectorLabelView: NSView {
 }
 
 
-public class PathSelectorLabelViewController: NSViewController {
+public class PathSelectorLabelViewController: NSViewController, DroppableView.DropAcceptor {
+	public typealias callback = ((URL?) -> Bool)
 	@IBOutlet private var selectPathButton: NSButton!
 	@IBOutlet private var pathLabel: NSTextField!
 	@IBOutlet private var unsetPathButton: NSButton!
+	@IBOutlet private weak var dropBox: DroppableView!
 	
-	public func setup(into parentView: NSView) {
+	public func setup(path: URL?, callback: callback?) {
+		self._path = path
+		if #available(macOS 13.0, *) {
+			pathLabel.stringValue = path?.path() ?? ""
+		} else {
+			pathLabel.stringValue = path?.path ?? ""
+		}
+		self.pathSelectedCallback = callback
 	}
+	
+	
+	/// Called when the path changes. Return `true` if the selected path should change, otherwise `false` to keep the previous path.
+	public var pathSelectedCallback: callback?
 	
 	public var selectPathButtonText: String {
 		get {
@@ -58,12 +71,22 @@ public class PathSelectorLabelViewController: NSViewController {
 			return _path
 		}
 		set {
-			if #available(macOS 13.0, *) {
-				pathLabel.stringValue = newValue?.path() ?? ""
-			} else {
-				pathLabel.stringValue = newValue?.path ?? ""
+			let shouldSetNewValue = {
+				if let pathSelectedCallback {
+					return pathSelectedCallback(newValue)
+				} else {
+					return true
+				}
+			}()
+			
+			if shouldSetNewValue {
+				if #available(macOS 13.0, *) {
+					pathLabel.stringValue = newValue?.path() ?? ""
+				} else {
+					pathLabel.stringValue = newValue?.path ?? ""
+				}
+				_path = newValue
 			}
-			_path = newValue
 		}
 	}
 	
@@ -92,4 +115,68 @@ public class PathSelectorLabelViewController: NSViewController {
 		path = nil
 	}
 	
+}
+
+public class DroppableView: NSView {
+	@objc public protocol DropAcceptor {
+		var path: URL? { get set }
+	}
+	@IBOutlet var dropAcceptor: DropAcceptor!
+	private var NormalBorderColor: CGColor = NSColor.clear.cgColor
+	
+	public override init(frame frameRect: NSRect) {
+		super.init(frame: frameRect)
+		commonInit()
+	}
+	public required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		commonInit()
+	}
+	
+	override public func awakeFromNib() {
+		super.awakeFromNib()
+		if #available(macOS 10.13, *) {
+			self.registerForDraggedTypes([.fileURL])
+		} else {
+			self.registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String)])
+		}
+	}
+	
+	private func commonInit() {
+		self.wantsLayer = true
+		self.layer!.borderWidth = 1.0
+		self.layer!.borderColor = NormalBorderColor
+		self.layer!.cornerRadius = 6
+	}
+	
+	public override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
+		if sender.draggingPasteboard.canReadObject(forClasses: [NSURL.self], options: nil) {
+			self.layer!.borderColor = NSColor.selectedControlColor.cgColor
+			return .copy
+		} else {
+			return NSDragOperation()
+		}
+	}
+	
+	public override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
+		return true
+	}
+	
+	public override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+		if let draggedItems = sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: nil) {
+			if let draggedItem = draggedItems.first as? NSURL {
+				dropAcceptor.path = draggedItem as URL
+			}
+		}
+		return true
+	}
+	
+	public override func draggingEnded(_ sender: NSDraggingInfo) {
+		self.layer?.borderColor = NormalBorderColor
+	}
+	
+	public override func draggingExited(_ sender: NSDraggingInfo?) {
+		self.layer?.borderColor = NormalBorderColor
+	}
+
 }

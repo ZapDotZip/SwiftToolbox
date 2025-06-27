@@ -9,64 +9,79 @@
         <customObject id="-2" userLabel="File's Owner" customClass="PathSelectorLabelView" customModule="SwiftToolbox" customModuleProvider="target">
             <connections>
                 <outlet property="controller" destination="6Qs-gG-EAc" id="rgL-Jp-bIM"/>
-                <outlet property="mainView" destination="Hz6-mo-xeY" id="Ztj-FD-k1P"/>
+                <outlet property="mainView" destination="Hz6-mo-xeY" id="gED-G8-6AC"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="350" height="20"/>
+            <rect key="frame" x="0.0" y="0.0" width="350" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="WQ2-lh-Aez">
-                    <rect key="frame" x="-7" y="-7" width="115" height="32"/>
-                    <buttonCell key="cell" type="push" title="Select Path..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wF6-D5-Huw">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="selectPathButtonPressed:" target="6Qs-gG-EAc" id="qkB-ma-Grs"/>
-                    </connections>
-                </button>
-                <textField focusRingType="none" horizontalHuggingPriority="100" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-2A-ra9">
-                    <rect key="frame" x="107" y="3" width="222" height="16"/>
+                <view translatesAutoresizingMaskIntoConstraints="NO" id="tFK-DX-GHY" customClass="DroppableView" customModule="SwiftToolbox" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="24"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yuK-bC-ORu">
+                            <rect key="frame" x="-5" y="-5" width="115" height="32"/>
+                            <buttonCell key="cell" type="push" title="Select Path..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X4j-Hz-cVG">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="selectPathButtonPressed:" target="6Qs-gG-EAc" id="mpq-uf-OxO"/>
+                            </connections>
+                        </button>
+                        <textField focusRingType="none" horizontalHuggingPriority="100" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="uc3-0K-rQL">
+                            <rect key="frame" x="109" y="5" width="218" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="J5e-pf-0MZ"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="truncatingMiddle" placeholderString="...or drag" id="sPy-q9-BRy">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button toolTip="Clear cache directory" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="5VA-bK-S29">
+                            <rect key="frame" x="333" y="5" width="15" height="15"/>
+                            <buttonCell key="cell" type="bevel" alternateTitle="Unset Path" bezelStyle="rounded" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" inset="2" id="jaZ-Sf-MNs">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="resetButtonPressed:" target="6Qs-gG-EAc" id="0sc-HK-BQ4"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Htz-mV-o3J"/>
+                        <constraint firstItem="yuK-bC-ORu" firstAttribute="top" secondItem="tFK-DX-GHY" secondAttribute="top" constant="2" id="CQd-d5-BGC"/>
+                        <constraint firstItem="5VA-bK-S29" firstAttribute="leading" secondItem="uc3-0K-rQL" secondAttribute="trailing" constant="8" symbolic="YES" id="FN9-YC-VUK"/>
+                        <constraint firstItem="yuK-bC-ORu" firstAttribute="leading" secondItem="tFK-DX-GHY" secondAttribute="leading" constant="2" id="Pp1-I3-a3u"/>
+                        <constraint firstItem="uc3-0K-rQL" firstAttribute="firstBaseline" secondItem="yuK-bC-ORu" secondAttribute="firstBaseline" id="RlP-4A-gR1"/>
+                        <constraint firstAttribute="trailing" secondItem="5VA-bK-S29" secondAttribute="trailing" constant="2" id="ZHt-nb-rJd"/>
+                        <constraint firstAttribute="bottom" secondItem="yuK-bC-ORu" secondAttribute="bottom" constant="2" id="al6-HF-8od"/>
+                        <constraint firstItem="uc3-0K-rQL" firstAttribute="leading" secondItem="yuK-bC-ORu" secondAttribute="trailing" constant="8" symbolic="YES" id="nIz-Hj-HsK"/>
+                        <constraint firstItem="5VA-bK-S29" firstAttribute="centerY" secondItem="yuK-bC-ORu" secondAttribute="centerY" id="x4A-HA-Vbl"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" placeholderString="...or drag" id="6Fc-qA-PU3">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <button toolTip="Clear cache directory" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-oa-947">
-                    <rect key="frame" x="335" y="3" width="15" height="15"/>
-                    <buttonCell key="cell" type="bevel" alternateTitle="Unset Path" bezelStyle="rounded" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" inset="2" id="Vba-Ob-q5C">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
                     <connections>
-                        <action selector="resetButtonPressed:" target="6Qs-gG-EAc" id="RwK-Lk-qeD"/>
+                        <outlet property="dropAcceptor" destination="6Qs-gG-EAc" id="iVT-e6-IEm"/>
                     </connections>
-                </button>
+                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="prZ-oa-947" firstAttribute="centerY" secondItem="WQ2-lh-Aez" secondAttribute="centerY" id="09e-3g-rbc"/>
-                <constraint firstItem="WQ2-lh-Aez" firstAttribute="firstBaseline" secondItem="0Nn-2A-ra9" secondAttribute="firstBaseline" id="LZe-yB-to8"/>
-                <constraint firstItem="WQ2-lh-Aez" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Tjy-mT-tiQ"/>
-                <constraint firstItem="WQ2-lh-Aez" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="b7t-DI-JFf"/>
-                <constraint firstAttribute="trailing" secondItem="prZ-oa-947" secondAttribute="trailing" id="dDw-Nx-kge"/>
-                <constraint firstItem="0Nn-2A-ra9" firstAttribute="leading" secondItem="WQ2-lh-Aez" secondAttribute="trailing" constant="8" symbolic="YES" id="k2M-3d-ffp"/>
-                <constraint firstItem="prZ-oa-947" firstAttribute="leading" secondItem="0Nn-2A-ra9" secondAttribute="trailing" constant="8" symbolic="YES" id="lPO-mt-D7a"/>
-                <constraint firstAttribute="bottom" secondItem="WQ2-lh-Aez" secondAttribute="bottom" id="p3d-DV-zsE"/>
+                <constraint firstAttribute="trailing" secondItem="tFK-DX-GHY" secondAttribute="trailing" id="677-ul-CgX"/>
+                <constraint firstAttribute="bottom" secondItem="tFK-DX-GHY" secondAttribute="bottom" id="ECG-LI-giW"/>
+                <constraint firstItem="tFK-DX-GHY" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="VZ6-Fi-ilN"/>
+                <constraint firstItem="tFK-DX-GHY" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="fDU-eP-pk9"/>
             </constraints>
             <point key="canvasLocation" x="9" y="39"/>
         </customView>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <viewController id="6Qs-gG-EAc" customClass="PathSelectorLabelViewController" customModule="SwiftToolbox" customModuleProvider="target">
             <connections>
-                <outlet property="pathLabel" destination="0Nn-2A-ra9" id="KrO-NU-yvm"/>
-                <outlet property="selectPathButton" destination="WQ2-lh-Aez" id="Cyu-9O-6Rh"/>
-                <outlet property="unsetPathButton" destination="prZ-oa-947" id="t0Y-40-Ves"/>
+                <outlet property="dropBox" destination="tFK-DX-GHY" id="WvG-e2-djN"/>
+                <outlet property="pathLabel" destination="uc3-0K-rQL" id="PoK-V2-4mc"/>
+                <outlet property="selectPathButton" destination="yuK-bC-ORu" id="QhB-x7-9ah"/>
+                <outlet property="unsetPathButton" destination="5VA-bK-S29" id="irn-qU-8M3"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="TjM-0u-6jy"/>
             </connections>
         </viewController>
