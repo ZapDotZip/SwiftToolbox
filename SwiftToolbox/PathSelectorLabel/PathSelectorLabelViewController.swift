@@ -34,11 +34,17 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 	@IBOutlet private weak var dropBox: DroppableView!
 	
 	public func setup(path: URL?, callback: callback?) {
-		self._path = path
-		if #available(macOS 13.0, *) {
-			pathLabel.stringValue = path?.path() ?? ""
+		if let path {
+			self._path = path
+			if #available(macOS 13.0, *) {
+				pathLabel.stringValue = path.path()
+			} else {
+				pathLabel.stringValue = path.path
+			}
+			unsetPathButton.isEnabled = true
 		} else {
-			pathLabel.stringValue = path?.path ?? ""
+			pathLabel.stringValue = ""
+			unsetPathButton.isEnabled = false
 		}
 		self.pathSelectedCallback = callback
 	}
@@ -72,11 +78,10 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 		}
 		set {
 			let shouldSetNewValue = {
-				if let pathSelectedCallback {
-					return pathSelectedCallback(newValue)
-				} else {
+				guard let pathSelectedCallback else {
 					return true
 				}
+				return pathSelectedCallback(newValue)
 			}()
 			
 			if shouldSetNewValue {
@@ -86,6 +91,11 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 					pathLabel.stringValue = newValue?.path ?? ""
 				}
 				_path = newValue
+				if newValue != nil {
+					unsetPathButton.isEnabled = true
+				} else {
+					unsetPathButton.isEnabled = false
+				}
 			}
 		}
 	}
@@ -101,7 +111,11 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do view setup here.
+		if path != nil {
+			unsetPathButton.isEnabled = true
+		} else {
+			unsetPathButton.isEnabled = false
+		}
 	}
 	
 	@IBAction func selectPathButtonPressed(_ sender: NSButton) {
