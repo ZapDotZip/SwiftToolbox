@@ -134,6 +134,7 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 public class DroppableView: NSView {
 	@objc public protocol DropAcceptor {
 		var path: URL? { get set }
+		var canChooseFiles: Bool { get set }
 	}
 	@IBOutlet var dropAcceptor: DropAcceptor!
 	private var NormalBorderColor: CGColor = NSColor.clear.cgColor
@@ -163,8 +164,19 @@ public class DroppableView: NSView {
 		self.layer!.cornerRadius = 6
 	}
 	
+	private final func isDragValid(_ sender: NSDraggingInfo) -> Bool {
+		if let objs = sender.draggingPasteboard.readObjects(forClasses: [NSURL.self]), objs.count == 1 {
+			if dropAcceptor.canChooseFiles {
+				return true
+			} else if let url = objs.first as? URL {
+				return url.hasDirectoryPath
+			}
+		}
+		return false
+	}
+	
 	public override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
-		if sender.draggingPasteboard.canReadObject(forClasses: [NSURL.self], options: nil) {
+		if isDragValid(sender) {
 			self.layer!.borderColor = NSColor.selectedControlColor.cgColor
 			return .copy
 		} else {
@@ -173,7 +185,7 @@ public class DroppableView: NSView {
 	}
 	
 	public override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
-		return true
+		return isDragValid(sender)
 	}
 	
 	public override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
