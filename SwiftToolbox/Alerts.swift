@@ -48,7 +48,7 @@ public class Alerts {
 	}
 	
 	
-	/// Creates an `NSPopover` with a single label relative to a view.
+	/// Creates an `NSPopover` with a single label relative to a view. Does not display if the view does not have a window.
 	/// - Parameters:
 	///   - text: The text to display in the label
 	///   - view: The view to display the popover from.
@@ -74,7 +74,9 @@ public class Alerts {
 			label.bottomAnchor.constraint(equalTo: contentViewController.view.bottomAnchor, constant: -8),
 			label.leadingAnchor.constraint(equalTo: contentViewController.view.leadingAnchor, constant: 8)
 		])
-		popover.show(relativeTo: view.bounds, of: view, preferredEdge: preferredEdge)
+		if view.window != nil {
+			popover.show(relativeTo: view.bounds, of: view, preferredEdge: preferredEdge)
+		}
 		return popover
 	}
 	
