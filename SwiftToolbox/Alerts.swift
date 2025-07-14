@@ -15,13 +15,15 @@ public class Alerts {
 	///   - buttons: The buttons to add
 	/// - Returns: The alert response.
 	@discardableResult
-	public static func Alert(title: String, message: String, style: NSAlert.Style, buttons: [String]) -> NSApplication.ModalResponse {
+	public static func Alert(title: String, message: String, style: NSAlert.Style, buttons: [String]? = nil) -> NSApplication.ModalResponse {
 		let alert = NSAlert()
 		alert.messageText = title
 		alert.informativeText = message
 		alert.alertStyle = .critical
-		for btn in buttons {
-			alert.addButton(withTitle: btn)
+		if let buttons {
+			for btn in buttons {
+				alert.addButton(withTitle: btn)
+			}
 		}
 		return alert.runModal()
 	}
