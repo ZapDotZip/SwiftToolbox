@@ -36,11 +36,7 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 	public func setup(path: URL?, callback: callback?) {
 		if let path {
 			self._path = path
-			if #available(macOS 13.0, *) {
-				pathLabel.stringValue = path.path()
-			} else {
-				pathLabel.stringValue = path.path
-			}
+			pathLabel.stringValue = path.localPath
 			unsetPathButton.isEnabled = true
 		} else {
 			pathLabel.stringValue = ""
@@ -85,11 +81,7 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 			}()
 			
 			if shouldSetNewValue {
-				if #available(macOS 13.0, *) {
-					pathLabel.stringValue = newValue?.path() ?? ""
-				} else {
-					pathLabel.stringValue = newValue?.path ?? ""
-				}
+				pathLabel.stringValue = newValue?.localPath ?? ""
 				_path = newValue
 				if newValue != nil {
 					unsetPathButton.isEnabled = true

@@ -13,6 +13,7 @@
 		ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593062E05FBFD0010673E /* KeychainError.swift */; };
 		ED6593092E05FC670010673E /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593082E05FC670010673E /* Machine.swift */; };
 		ED65930B2E05FD7B0010673E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65930A2E05FD7B0010673E /* Alerts.swift */; };
+		ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */; };
 		EDC82A7C2D87866E006BBCAB /* SwiftToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; };
 		EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
@@ -36,6 +37,7 @@
 		ED6593062E05FBFD0010673E /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		ED6593082E05FC670010673E /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
 		ED65930A2E05FD7B0010673E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardsCompatibility.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDialogues.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				ED6592F02E05EC4C0010673E /* Keychain.swift */,
 				ED6593062E05FBFD0010673E /* KeychainError.swift */,
 				ED6593082E05FC670010673E /* Machine.swift */,
+				ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */,
 				ED2BCCF72E087C0500B99ECA /* PathSelectorLabel */,
 				EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */,
 				EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */,
@@ -233,6 +236,7 @@
 				ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */,
 				EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */,
 				ED6593092E05FC670010673E /* Machine.swift in Sources */,
+				ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */,
 				EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */,
 				ED2BCCF82E087C0500B99ECA /* PathSelectorLabelViewController.swift in Sources */,
 				ED65930B2E05FD7B0010673E /* Alerts.swift in Sources */,
