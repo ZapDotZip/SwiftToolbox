@@ -5,7 +5,7 @@
 
 import AppKit
 
-public class Alerts {
+public class STBAlerts {
 	
 	/// Creates and runs an NSAlert
 	/// - Parameters:
@@ -15,7 +15,7 @@ public class Alerts {
 	///   - buttons: The buttons to add
 	/// - Returns: The alert response.
 	@discardableResult
-	public static func Alert(title: String, message: String, style: NSAlert.Style, buttons: [String]? = nil) -> NSApplication.ModalResponse {
+	public static func alert(title: String, message: String, style: NSAlert.Style, buttons: [String]? = nil) -> NSApplication.ModalResponse {
 		let alert = NSAlert()
 		alert.messageText = title
 		alert.informativeText = message
@@ -35,7 +35,7 @@ public class Alerts {
 	///   - style: The alert style
 	/// - Returns: Whether or not the user has agreed to the destructive action.
 	@discardableResult
-	public static func DestructiveAlert(title: String, message: String, style: NSAlert.Style, destructiveButtonText: String) -> Bool {
+	public static func destructiveAlert(title: String, message: String, style: NSAlert.Style, destructiveButtonText: String) -> Bool {
 		let alert = NSAlert()
 		alert.messageText = title
 		alert.informativeText = message
@@ -57,7 +57,7 @@ public class Alerts {
 	///   - preferredEdge: The edge of positioningView the popover should prefer to be anchored to.
 	/// - Returns: The NSPopover, for reuse.
 	@available(macOS 10.12, *)
-	public static func PopoverTextAlert(text: String, relativeTo view: NSView, preferredEdge: NSRectEdge) -> NSPopover {
+	public static func popoverTextAlert(text: String, relativeTo view: NSView, preferredEdge: NSRectEdge) -> NSPopover {
 		let label = NSTextField(wrappingLabelWithString: text)
 		label.alignment = .left
 		label.sizeToFit()

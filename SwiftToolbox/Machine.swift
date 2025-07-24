@@ -10,10 +10,10 @@ import IOKit.ps
 public class Machine {
 	public static func isOnBattery() -> Bool {
 		let info = IOPSCopyPowerSourcesInfo().takeRetainedValue()
-		let list = IOPSCopyPowerSourcesList(info).takeRetainedValue() as Array
+		let powerSourceList = IOPSCopyPowerSourcesList(info).takeRetainedValue() as Array
 		
-		for i in list {
-			if let desc = IOPSGetPowerSourceDescription(info, i).takeUnretainedValue() as? [String: Any],
+		for powerSource in powerSourceList {
+			if let desc = IOPSGetPowerSourceDescription(info, powerSource).takeUnretainedValue() as? [String: Any],
 			   let isCharging = (desc[kIOPSIsChargingKey] as? Bool) {
 				return !isCharging
 			}
@@ -38,7 +38,7 @@ public class Machine {
 		guard sysctlbyname(name, nil, &size, nil, 0) == 0 else {
 			return nil
 		}
-		var result = [CChar](repeating: 0,  count: size)
+		var result = [CChar](repeating: 0, count: size)
 		guard sysctlbyname(name, &result, &size, nil, 0) == 0 else {
 			return nil
 		}

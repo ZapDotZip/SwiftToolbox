@@ -5,8 +5,14 @@
 
 import AppKit
 
+/// Provides open and save file
 public class FileDialogues {
-	public typealias completionHandler = ([URL]?) -> Void
+	public enum SelectableTypes {
+		case directories
+		case files(allowedFileExtensions: [String]?)
+	}
+	
+	public typealias CompletionHandler = ([URL]?) -> Void
 	
 	private static func createOpenPanel(message: String?, prompt: String?, canChooseDirectories: Bool, canChooseFiles: Bool, canSelectMultipleItems: Bool, canCreateDirectories: Bool, allowedFileTypes: [String]? = nil) -> NSOpenPanel {
 		let openPanel = NSOpenPanel()
@@ -56,7 +62,7 @@ public class FileDialogues {
 	///   - canCreateDirectories: If the user can create directories.
 	///   - allowedFileTypes: The files types that are allowed to be selected. All items are allowed if unspecified.
 	///   - handler: Receives an array of selected `URL`s, or `nil` if the user clicked the cancel button..
-	public static func openPanelModal(for window: NSWindow, message: String?, prompt: String?, canChooseDirectories: Bool, canChooseFiles: Bool, canSelectMultipleItems: Bool, canCreateDirectories: Bool, allowedFileTypes: [String]? = nil, handler: @escaping completionHandler) {
+	public static func openPanelModal(for window: NSWindow, message: String?, prompt: String?, canChooseDirectories: Bool, canChooseFiles: Bool, canSelectMultipleItems: Bool, canCreateDirectories: Bool, allowedFileTypes: [String]? = nil, handler: @escaping CompletionHandler) {
 		let openPanel = createOpenPanel(message: message, prompt: prompt, canChooseDirectories: canChooseDirectories, canChooseFiles: canChooseFiles, canSelectMultipleItems: canSelectMultipleItems, canCreateDirectories: canCreateDirectories, allowedFileTypes: allowedFileTypes)
 		
 		openPanel.beginSheetModal(for: window) { response in

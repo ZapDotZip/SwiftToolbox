@@ -27,13 +27,13 @@ public class PathSelectorLabelView: NSView {
 
 
 public class PathSelectorLabelViewController: NSViewController, DroppableView.DropAcceptor {
-	public typealias callback = ((URL?) -> Bool)
+	public typealias Callback = ((URL?) -> Bool)
 	@IBOutlet private var selectPathButton: NSButton!
 	@IBOutlet private var pathLabel: NSTextField!
 	@IBOutlet private var unsetPathButton: NSButton!
 	@IBOutlet private weak var dropBox: DroppableView!
 	
-	public func setup(path: URL?, callback: callback?) {
+	public func setup(path: URL?, callback: Callback?) {
 		if let path {
 			self._path = path
 			pathLabel.stringValue = path.localPath
@@ -47,7 +47,7 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 	
 	
 	/// Called when the path changes. Return `true` if the selected path should change, otherwise `false` to keep the previous path.
-	public var pathSelectedCallback: callback?
+	public var pathSelectedCallback: Callback?
 	
 	public var selectPathButtonText: String {
 		get {
@@ -129,7 +129,7 @@ public class DroppableView: NSView {
 		var canChooseFiles: Bool { get set }
 	}
 	@IBOutlet var dropAcceptor: DropAcceptor!
-	private var NormalBorderColor: CGColor = NSColor.clear.cgColor
+	private var defaultBorderColor: CGColor = NSColor.clear.cgColor
 	
 	public override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
@@ -152,7 +152,7 @@ public class DroppableView: NSView {
 	private func commonInit() {
 		self.wantsLayer = true
 		self.layer!.borderWidth = 1.0
-		self.layer!.borderColor = NormalBorderColor
+		self.layer!.borderColor = defaultBorderColor
 		self.layer!.cornerRadius = 6
 	}
 	
@@ -190,11 +190,11 @@ public class DroppableView: NSView {
 	}
 	
 	public override func draggingEnded(_ sender: NSDraggingInfo) {
-		self.layer?.borderColor = NormalBorderColor
+		self.layer?.borderColor = defaultBorderColor
 	}
 	
 	public override func draggingExited(_ sender: NSDraggingInfo?) {
-		self.layer?.borderColor = NormalBorderColor
+		self.layer?.borderColor = defaultBorderColor
 	}
 
 }
