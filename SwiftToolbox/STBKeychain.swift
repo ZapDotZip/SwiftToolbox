@@ -5,11 +5,11 @@
 
 import Foundation
 
-public class Keychain {
+public class STBKeychain {
 	
 	static let service = Bundle.main.bundleIdentifier ?? "unknown bundle identifier"
 	
-	public static func add(path: String, password: String) throws(KeychainError) {
+	public static func add(path: String, password: String) throws(STBKeychainError) {
 		let dict = [
 			kSecClass: kSecClassGenericPassword,
 			kSecAttrService: service,
@@ -18,53 +18,51 @@ public class Keychain {
 		] as CFDictionary
 		let status = SecItemAdd(dict, nil)
 		if status != errSecSuccess {
-			throw KeychainError(status)
+			throw STBKeychainError(status)
 		}
 	}
 	
-	public static func load(path: String) throws(KeychainError) -> String {
+	public static func load(path: String) throws(STBKeychainError) -> String {
 		let dict = [
 			kSecMatchLimit: kSecMatchLimitOne,
 			kSecClass: kSecClassGenericPassword,
 			kSecAttrService: service,
 			kSecAttrAccount: path,
-			kSecReturnData: true,
+			kSecReturnData: true
 		] as CFDictionary
 		var result: AnyObject?
 		
 		let status = SecItemCopyMatching(dict, &result)
 		if status != errSecSuccess {
 			NSLog("Unable to get keychain item: \(status)")
-			throw KeychainError(status)
+			throw STBKeychainError(status)
 		}
 		if let data = result as? Data, let str = String.init(data: data, encoding: .utf8) {
 			return str
 		} else {
-			throw KeychainError.unableToDecodeResult()
+			throw STBKeychainError.unableToDecodeResult()
 		}
 	}
 	
-	public static func update(path: String, password: String) throws(KeychainError) {
+	public static func update(path: String, password: String) throws(STBKeychainError) {
 		let dict = [
 			kSecClass: kSecClassGenericPassword,
 			kSecAttrService: service,
-			kSecAttrAccount: path,
+			kSecAttrAccount: path
 		] as CFDictionary
-		let update = [
-			kSecValueData: password.data(using: .utf8)!,
-		] as CFDictionary
+		let update = [kSecValueData: password.data(using: .utf8)!] as CFDictionary
 		
 		let status = SecItemUpdate(dict, update)
 		if status != errSecSuccess {
-			throw KeychainError(status)
+			throw STBKeychainError(status)
 		}
 	}
 	
-	public static func update(path: String) throws(KeychainError) {
+	public static func update(path: String) throws(STBKeychainError) {
 		let dict = [
 			kSecClass: kSecClassGenericPassword,
 			kSecAttrService: service,
-			kSecAttrAccount: path,
+			kSecAttrAccount: path
 		] as CFDictionary
 		let update = [
 			kSecAttrAccount: path
@@ -72,11 +70,11 @@ public class Keychain {
 		
 		let status = SecItemUpdate(dict, update)
 		if status != errSecSuccess {
-			throw KeychainError(status)
+			throw STBKeychainError(status)
 		}
 	}
 	
-	public static func updateOrAdd(path: String, password: String) throws(KeychainError) {
+	public static func updateOrAdd(path: String, password: String) throws(STBKeychainError) {
 		do {
 			try update(path: path, password: password)
 		} catch {
@@ -93,16 +91,16 @@ public class Keychain {
 		}
 	}
 	
-	public static func delete(path: String) throws(KeychainError) {
+	public static func delete(path: String) throws(STBKeychainError) {
 		let dict = [
 			kSecClass: kSecClassGenericPassword,
 			kSecAttrService: service,
-			kSecAttrAccount: path,
+			kSecAttrAccount: path
 		] as CFDictionary
 		
 		let status = SecItemDelete(dict)
 		if status != errSecSuccess {
-			throw KeychainError(status)
+			throw STBKeychainError(status)
 		}
 	}
 	

@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED2BCCF82E087C0500B99ECA /* PathSelectorLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BCCF52E087C0500B99ECA /* PathSelectorLabelViewController.swift */; };
+		ED2BCCF82E087C0500B99ECA /* STBPathSelectorLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2BCCF52E087C0500B99ECA /* STBPathSelectorLabelViewController.swift */; };
 		ED2BCCF92E087C0500B99ECA /* PathSelectorLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */; };
-		ED6592F12E05EC4C0010673E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6592F02E05EC4C0010673E /* Keychain.swift */; };
-		ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593062E05FBFD0010673E /* KeychainError.swift */; };
-		ED6593092E05FC670010673E /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593082E05FC670010673E /* Machine.swift */; };
-		ED65930B2E05FD7B0010673E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65930A2E05FD7B0010673E /* Alerts.swift */; };
+		ED6592F12E05EC4C0010673E /* STBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6592F02E05EC4C0010673E /* STBKeychain.swift */; };
+		ED6593072E05FBFD0010673E /* STBKeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593062E05FBFD0010673E /* STBKeychainError.swift */; };
+		ED6593092E05FC670010673E /* STBMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6593082E05FC670010673E /* STBMachine.swift */; };
+		ED65930B2E05FD7B0010673E /* STBAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED65930A2E05FD7B0010673E /* STBAlerts.swift */; };
 		ED66D1CF2E32BAE800D6307C /* SwiftToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; };
 		ED66D1D02E32BAE800D6307C /* SwiftToolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED66D1D32E32BAF100D6307C /* SwiftToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; };
 		ED66D1D42E32BAF100D6307C /* SwiftToolbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED66D1EE2E3447CD00D6307C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED66D1EA2E3447CD00D6307C /* Main.storyboard */; };
+		ED66D1F22E3447CD00D6307C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E82E3447CD00D6307C /* AppDelegate.swift */; };
+		ED66D1F32E3447CD00D6307C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1EC2E3447CD00D6307C /* ViewController.swift */; };
+		ED66D1F42E3447CD00D6307C /* SwiftToolboxTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E32E3447CD00D6307C /* SwiftToolboxTestAppTests.swift */; };
+		ED66D1F52E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E62E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift */; };
+		ED66D1F62E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E52E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift */; };
 		ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */; };
-		EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */; };
+		EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
 		EDC82A942D878C61006BBCAB /* SwiftToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -80,61 +86,31 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		ED2BCCF52E087C0500B99ECA /* PathSelectorLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSelectorLabelViewController.swift; sourceTree = "<group>"; };
+		ED2BCCF52E087C0500B99ECA /* STBPathSelectorLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPathSelectorLabelViewController.swift; sourceTree = "<group>"; };
 		ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathSelectorLabelView.xib; sourceTree = "<group>"; };
-		ED6592F02E05EC4C0010673E /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		ED6593062E05FBFD0010673E /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
-		ED6593082E05FC670010673E /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
-		ED65930A2E05FD7B0010673E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		ED6592F02E05EC4C0010673E /* STBKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBKeychain.swift; sourceTree = "<group>"; };
+		ED6593062E05FBFD0010673E /* STBKeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBKeychainError.swift; sourceTree = "<group>"; };
+		ED6593082E05FC670010673E /* STBMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBMachine.swift; sourceTree = "<group>"; };
+		ED65930A2E05FD7B0010673E /* STBAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBAlerts.swift; sourceTree = "<group>"; };
 		ED66D1A42E32BA3300D6307C /* SwiftToolboxTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftToolboxTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED66D1B42E32BA3400D6307C /* SwiftToolboxTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED66D1BE2E32BA3400D6307C /* SwiftToolboxTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED66D1E32E3447CD00D6307C /* SwiftToolboxTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToolboxTestAppTests.swift; sourceTree = "<group>"; };
+		ED66D1E52E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToolboxTestAppUITests.swift; sourceTree = "<group>"; };
+		ED66D1E62E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToolboxTestAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED66D1E82E3447CD00D6307C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED66D1E92E3447CD00D6307C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED66D1EB2E3447CD00D6307C /* SwiftToolboxTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftToolboxTestApp.entitlements; sourceTree = "<group>"; };
+		ED66D1EC2E3447CD00D6307C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardsCompatibility.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDialogues.swift; sourceTree = "<group>"; };
+		EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBFilePanels.swift; sourceTree = "<group>"; };
 		EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftToolbox.h; sourceTree = "<group>"; };
 		EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SwiftToolbox.docc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		ED66D1E02E32BBC400D6307C /* Exceptions for "SwiftToolboxTestApp" folder in "SwiftToolboxTestApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SwiftToolboxTestAppTests/SwiftToolboxTestAppTests.swift,
-				SwiftToolboxTestAppUITests/SwiftToolboxTestAppUITests.swift,
-				SwiftToolboxTestAppUITests/SwiftToolboxTestAppUITestsLaunchTests.swift,
-			);
-			target = ED66D1A32E32BA3300D6307C /* SwiftToolboxTestApp */;
-		};
-		ED66D1E12E32BBC400D6307C /* Exceptions for "SwiftToolboxTestApp" folder in "SwiftToolboxTestAppTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SwiftToolboxTestAppTests/SwiftToolboxTestAppTests.swift,
-			);
-			target = ED66D1B32E32BA3400D6307C /* SwiftToolboxTestAppTests */;
-		};
-		ED66D1E22E32BBC400D6307C /* Exceptions for "SwiftToolboxTestApp" folder in "SwiftToolboxTestAppUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SwiftToolboxTestAppUITests/SwiftToolboxTestAppUITests.swift,
-				SwiftToolboxTestAppUITests/SwiftToolboxTestAppUITestsLaunchTests.swift,
-			);
-			target = ED66D1BD2E32BA3400D6307C /* SwiftToolboxTestAppUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		ED66D1A52E32BA3300D6307C /* SwiftToolboxTestApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				ED66D1E02E32BBC400D6307C /* Exceptions for "SwiftToolboxTestApp" folder in "SwiftToolboxTestApp" target */,
-				ED66D1E12E32BBC400D6307C /* Exceptions for "SwiftToolboxTestApp" folder in "SwiftToolboxTestAppTests" target */,
-				ED66D1E22E32BBC400D6307C /* Exceptions for "SwiftToolboxTestApp" folder in "SwiftToolboxTestAppUITests" target */,
-			);
-			path = SwiftToolboxTestApp;
-			sourceTree = "<group>";
-		};
 		EDC82A7F2D87866E006BBCAB /* SwiftToolboxTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftToolboxTests;
@@ -186,7 +162,7 @@
 		ED2BCCF72E087C0500B99ECA /* PathSelectorLabel */ = {
 			isa = PBXGroup;
 			children = (
-				ED2BCCF52E087C0500B99ECA /* PathSelectorLabelViewController.swift */,
+				ED2BCCF52E087C0500B99ECA /* STBPathSelectorLabelViewController.swift */,
 				ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */,
 			);
 			path = PathSelectorLabel;
@@ -199,12 +175,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED66D1E42E3447CD00D6307C /* SwiftToolboxTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED66D1E32E3447CD00D6307C /* SwiftToolboxTestAppTests.swift */,
+			);
+			path = SwiftToolboxTestAppTests;
+			sourceTree = "<group>";
+		};
+		ED66D1E72E3447CD00D6307C /* SwiftToolboxTestAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED66D1E52E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift */,
+				ED66D1E62E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift */,
+			);
+			path = SwiftToolboxTestAppUITests;
+			sourceTree = "<group>";
+		};
+		ED66D1ED2E3447CD00D6307C /* SwiftToolboxTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				ED66D1E82E3447CD00D6307C /* AppDelegate.swift */,
+				ED66D1EA2E3447CD00D6307C /* Main.storyboard */,
+				ED66D1EC2E3447CD00D6307C /* ViewController.swift */,
+				ED66D1EB2E3447CD00D6307C /* SwiftToolboxTestApp.entitlements */,
+				ED66D1E42E3447CD00D6307C /* SwiftToolboxTestAppTests */,
+				ED66D1E72E3447CD00D6307C /* SwiftToolboxTestAppUITests */,
+			);
+			path = SwiftToolboxTestApp;
+			sourceTree = "<group>";
+		};
 		EDC82A672D87866E006BBCAB = {
 			isa = PBXGroup;
 			children = (
 				EDC82A912D878C61006BBCAB /* SwiftToolbox */,
 				EDC82A7F2D87866E006BBCAB /* SwiftToolboxTests */,
-				ED66D1A52E32BA3300D6307C /* SwiftToolboxTestApp */,
+				ED66D1ED2E3447CD00D6307C /* SwiftToolboxTestApp */,
 				ED66D1D22E32BAF100D6307C /* Frameworks */,
 				EDC82A722D87866E006BBCAB /* Products */,
 			);
@@ -225,11 +231,11 @@
 		EDC82A912D878C61006BBCAB /* SwiftToolbox */ = {
 			isa = PBXGroup;
 			children = (
-				ED65930A2E05FD7B0010673E /* Alerts.swift */,
-				EDC82A8E2D878C61006BBCAB /* FileDialogues.swift */,
-				ED6592F02E05EC4C0010673E /* Keychain.swift */,
-				ED6593062E05FBFD0010673E /* KeychainError.swift */,
-				ED6593082E05FC670010673E /* Machine.swift */,
+				ED65930A2E05FD7B0010673E /* STBAlerts.swift */,
+				EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */,
+				ED6592F02E05EC4C0010673E /* STBKeychain.swift */,
+				ED6593062E05FBFD0010673E /* STBKeychainError.swift */,
+				ED6593082E05FC670010673E /* STBMachine.swift */,
 				ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */,
 				ED2BCCF72E087C0500B99ECA /* PathSelectorLabel */,
 				EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */,
@@ -265,9 +271,6 @@
 			);
 			dependencies = (
 				ED66D1D62E32BAF100D6307C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				ED66D1A52E32BA3300D6307C /* SwiftToolboxTestApp */,
 			);
 			name = SwiftToolboxTestApp;
 			packageProductDependencies = (
@@ -417,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED66D1EE2E3447CD00D6307C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +460,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED66D1F22E3447CD00D6307C /* AppDelegate.swift in Sources */,
+				ED66D1F32E3447CD00D6307C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED66D1F42E3447CD00D6307C /* SwiftToolboxTestAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +477,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED66D1F52E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift in Sources */,
+				ED66D1F62E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,14 +486,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED6593072E05FBFD0010673E /* KeychainError.swift in Sources */,
-				EDC82A922D878C61006BBCAB /* FileDialogues.swift in Sources */,
-				ED6593092E05FC670010673E /* Machine.swift in Sources */,
+				ED6593072E05FBFD0010673E /* STBKeychainError.swift in Sources */,
+				EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */,
+				ED6593092E05FC670010673E /* STBMachine.swift in Sources */,
 				ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */,
 				EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */,
-				ED2BCCF82E087C0500B99ECA /* PathSelectorLabelViewController.swift in Sources */,
-				ED65930B2E05FD7B0010673E /* Alerts.swift in Sources */,
-				ED6592F12E05EC4C0010673E /* Keychain.swift in Sources */,
+				ED2BCCF82E087C0500B99ECA /* STBPathSelectorLabelViewController.swift in Sources */,
+				ED65930B2E05FD7B0010673E /* STBAlerts.swift in Sources */,
+				ED6592F12E05EC4C0010673E /* STBKeychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +528,17 @@
 			targetProxy = EDC82A7D2D87866E006BBCAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED66D1EA2E3447CD00D6307C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED66D1E92E3447CD00D6307C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED66D1C62E32BA3400D6307C /* Debug */ = {

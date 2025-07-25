@@ -1,5 +1,5 @@
 //
-//  Machine.swift
+//  STBMachine.swift
 //  SwiftToolbox
 //
 
@@ -7,7 +7,7 @@ import Foundation
 import IOKit.ps
 
 
-public class Machine {
+public class STBMachine {
 	public static func isOnBattery() -> Bool {
 		let info = IOPSCopyPowerSourcesInfo().takeRetainedValue()
 		let powerSourceList = IOPSCopyPowerSourcesList(info).takeRetainedValue() as Array

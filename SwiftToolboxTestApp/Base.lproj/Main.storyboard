@@ -688,9 +688,9 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="200"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="270"/>
+                        <value key="minSize" type="size" width="480" height="200"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -711,8 +711,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="3ln-HQ-ocx">
-                                <rect key="frame" x="20" y="140" width="440" height="110"/>
+                            <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3ln-HQ-ocx">
+                                <rect key="frame" x="20" y="150" width="440" height="100"/>
                                 <rows>
                                     <gridRow id="34r-Af-B8A"/>
                                     <gridRow id="kp8-fO-BLW"/>
@@ -728,7 +728,7 @@
                                 <gridCells>
                                     <gridCell row="34r-Af-B8A" column="qgy-ki-Qa5" id="nNo-0n-u1b">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5TB-MT-W4z">
-                                            <rect key="frame" x="-7" y="83" width="104" height="32"/>
+                                            <rect key="frame" x="-7" y="73" width="104" height="32"/>
                                             <buttonCell key="cell" type="push" title="Open Panel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jYg-Vc-BXs">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -741,7 +741,7 @@
                                     <gridCell row="34r-Af-B8A" column="c5Z-sO-Rd6" id="EXh-W8-wSw"/>
                                     <gridCell row="kp8-fO-BLW" column="qgy-ki-Qa5" id="2WV-8a-kIR">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-KW-9Sj">
-                                            <rect key="frame" x="-7" y="57" width="145" height="32"/>
+                                            <rect key="frame" x="-7" y="49" width="145" height="32"/>
                                             <buttonCell key="cell" type="push" title="Open Panel Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TPR-j9-H6J">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -754,7 +754,7 @@
                                     <gridCell row="kp8-fO-BLW" column="c5Z-sO-Rd6" id="mVh-we-Ghp"/>
                                     <gridCell row="Fui-Ls-HNp" column="qgy-ki-Qa5" id="u72-Gi-GYr">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7OS-GH-PzH">
-                                            <rect key="frame" x="-7" y="31" width="100" height="32"/>
+                                            <rect key="frame" x="-7" y="25" width="100" height="32"/>
                                             <buttonCell key="cell" type="push" title="Save Panel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jb5-Jb-ibN">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -767,7 +767,7 @@
                                     <gridCell row="Fui-Ls-HNp" column="c5Z-sO-Rd6" id="KKh-se-Dpz"/>
                                     <gridCell row="RAa-jF-4WS" column="qgy-ki-Qa5" id="Aql-x3-1QD">
                                         <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-iq-zVJ">
-                                            <rect key="frame" x="-7" y="5" width="141" height="32"/>
+                                            <rect key="frame" x="-7" y="1" width="141" height="32"/>
                                             <buttonCell key="cell" type="push" title="Save Panel Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m7g-7N-dTl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>

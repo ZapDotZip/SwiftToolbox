@@ -13,7 +13,7 @@ public class STBFilePanels {
 		case directories
 		/// The user can select files.
 		/// - Parameter allowedFileExtensions: An array of file extensions the user can select.
-		case files(allowedFileExtensions: [String]?)
+		case files(_ allowedExtensions: [String]? = nil)
 	}
 	
 	public typealias CompletionHandler = ([URL]?) -> Void

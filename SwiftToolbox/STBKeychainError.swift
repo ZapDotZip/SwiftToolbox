@@ -1,11 +1,11 @@
 //
-//  KeychainError.swift
+//  STBKeychainError.swift
 //  SwiftToolbox
 //
 
 import Foundation
 
-public enum KeychainError: Error {
+public enum STBKeychainError: Error {
 	case unableToDecodeResult(msg: String = "The data from the keychain could not be decoded to a string.")
 	case unhandledOSStatusError(msg: String)
 	case itemNotFound(msg: String)

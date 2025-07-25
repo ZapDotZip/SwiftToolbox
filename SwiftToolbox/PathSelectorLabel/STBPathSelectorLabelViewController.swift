@@ -1,17 +1,17 @@
 //
-//  PathSelectorLabelViewController.swift
+//  STBPathSelectorLabelViewController.swift
 //  SwiftToolbox
 //
 
 import Cocoa
 
-public class PathSelectorLabelView: NSView {
+public class STBPathSelectorLabelView: NSView {
 	@IBOutlet private var mainView: NSView!
-	@IBOutlet public var controller: PathSelectorLabelViewController!
+	@IBOutlet public var controller: STBPathSelectorLabelViewController!
 	
 	public required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		let nib = NSNib(nibNamed: "PathSelectorLabelView", bundle: Bundle(for: PathSelectorLabelView.self))
+		let nib = NSNib(nibNamed: "PathSelectorLabelView", bundle: Bundle(for: STBPathSelectorLabelView.self))
 		nib?.instantiate(withOwner: self, topLevelObjects: nil)
 		let previousConstraints = mainView.constraints
 		mainView.subviews.forEach({addSubview($0)})
@@ -26,7 +26,7 @@ public class PathSelectorLabelView: NSView {
 }
 
 
-public class PathSelectorLabelViewController: NSViewController, DroppableView.DropAcceptor {
+public class STBPathSelectorLabelViewController: NSViewController, DroppableView.DropAcceptor {
 	public typealias Callback = ((URL?) -> Bool)
 	@IBOutlet private var selectPathButton: NSButton!
 	@IBOutlet private var pathLabel: NSTextField!
@@ -111,7 +111,7 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 	}
 	
 	@IBAction func selectPathButtonPressed(_ sender: NSButton) {
-		let res = FileDialogues.openPanel(message: openPanelMessage, prompt: openPanelPrompt, canSelectMultipleItems: canSelectMultipleItems, canCreateDirectories: canCreateDirectories, selectableTypes: nil)
+		let res = STBFilePanels.openPanel(message: openPanelMessage, prompt: openPanelPrompt, canSelectMultipleItems: canSelectMultipleItems, canCreateDirectories: canCreateDirectories, selectableTypes: nil)
 		if let url = res?.first {
 			path = url
 		}
