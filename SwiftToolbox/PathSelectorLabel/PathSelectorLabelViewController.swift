@@ -111,7 +111,7 @@ public class PathSelectorLabelViewController: NSViewController, DroppableView.Dr
 	}
 	
 	@IBAction func selectPathButtonPressed(_ sender: NSButton) {
-		let res = FileDialogues.openPanel(message: openPanelMessage, prompt: openPanelPrompt, canChooseDirectories: canChooseDirectories, canChooseFiles: canChooseFiles, canSelectMultipleItems: canSelectMultipleItems, canCreateDirectories: canCreateDirectories, allowedFileTypes: allowedFileTypes)
+		let res = FileDialogues.openPanel(message: openPanelMessage, prompt: openPanelPrompt, canSelectMultipleItems: canSelectMultipleItems, canCreateDirectories: canCreateDirectories, selectableTypes: nil)
 		if let url = res?.first {
 			path = url
 		}
