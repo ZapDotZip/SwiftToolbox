@@ -24,6 +24,7 @@
 		ED66D1F52E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E62E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift */; };
 		ED66D1F62E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E52E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift */; };
 		ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */; };
+		ED87D4FB2E3457FF00D72DFC /* STB.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87D4FA2E3457FF00D72DFC /* STB.swift */; };
 		EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
 		EDC82A942D878C61006BBCAB /* SwiftToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,6 +104,7 @@
 		ED66D1EB2E3447CD00D6307C /* SwiftToolboxTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftToolboxTestApp.entitlements; sourceTree = "<group>"; };
 		ED66D1EC2E3447CD00D6307C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardsCompatibility.swift; sourceTree = "<group>"; };
+		ED87D4FA2E3457FF00D72DFC /* STB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STB.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBFilePanels.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				ED65930A2E05FD7B0010673E /* STBAlerts.swift */,
+				ED87D4FA2E3457FF00D72DFC /* STB.swift */,
 				EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */,
 				ED6592F02E05EC4C0010673E /* STBKeychain.swift */,
 				ED6593062E05FBFD0010673E /* STBKeychainError.swift */,
@@ -488,6 +491,7 @@
 			files = (
 				ED6593072E05FBFD0010673E /* STBKeychainError.swift in Sources */,
 				EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */,
+				ED87D4FB2E3457FF00D72DFC /* STB.swift in Sources */,
 				ED6593092E05FC670010673E /* STBMachine.swift in Sources */,
 				ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */,
 				EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */,
