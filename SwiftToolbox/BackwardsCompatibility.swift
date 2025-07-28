@@ -16,6 +16,12 @@ public extension URL {
 		}
 	}
 	
+	/// Creates a URL from a string, expanding the tilde `~` in the path.
+	/// - Parameter localPathExpandingTilde: The local path string to create the URL from.
+	init(localPathExpandingTilde: String) {
+		self.init(localPath: (localPathExpandingTilde as NSString).expandingTildeInPath)
+	}
+	
 	/// Returns the path component of the URL, like `.path` and `.path()` (macOS 13+), suitable for displaying a local file path to the user.
 	var localPath: String {
 		if #available(macOS 13.0, *) {
