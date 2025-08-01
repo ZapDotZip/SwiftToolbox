@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="24"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <view translatesAutoresizingMaskIntoConstraints="NO" id="tFK-DX-GHY" customClass="DroppableView" customModule="SwiftToolbox" customModuleProvider="target">
+                <view translatesAutoresizingMaskIntoConstraints="NO" id="tFK-DX-GHY" customClass="STBDroppableBoxView" customModule="SwiftToolbox" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="350" height="24"/>
                     <subviews>
                         <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yuK-bC-ORu">
