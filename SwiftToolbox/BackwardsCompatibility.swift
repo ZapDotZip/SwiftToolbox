@@ -25,7 +25,7 @@ public extension URL {
 	/// Returns the path component of the URL, like `.path` and `.path()` (macOS 13+), suitable for displaying a local file path to the user.
 	var localPath: String {
 		if #available(macOS 13.0, *) {
-			return self.path()
+			return self.path(percentEncoded: false)
 		} else {
 			return self.path
 		}
