@@ -24,7 +24,14 @@
 		ED66D1F52E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E62E3447CD00D6307C /* SwiftToolboxTestAppUITestsLaunchTests.swift */; };
 		ED66D1F62E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E52E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift */; };
 		ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */; };
+		ED83929B2E3AE537003FDFBF /* STBNamedPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED83929A2E3AE537003FDFBF /* STBNamedPipe.swift */; };
 		ED87D4FB2E3457FF00D72DFC /* STB.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87D4FA2E3457FF00D72DFC /* STB.swift */; };
+		ED9BB0382E3D5C0200EA63B6 /* STBPathList.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9BB0352E3D5C0200EA63B6 /* STBPathList.xib */; };
+		ED9BB0392E3D5C0200EA63B6 /* STBPathListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0362E3D5C0200EA63B6 /* STBPathListView.swift */; };
+		ED9BB03B2E3D5DD700EA63B6 /* STBDroppableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */; };
+		ED9BB03F2E3D7E4700EA63B6 /* STBDropAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB03E2E3D7E4200EA63B6 /* STBDropAcceptor.swift */; };
+		ED9BB0412E3D82C500EA63B6 /* STBDroppableBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0402E3D82C500EA63B6 /* STBDroppableBoxView.swift */; };
+		ED9BB0432E3D82D600EA63B6 /* STBPathSelectorLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0422E3D82D600EA63B6 /* STBPathSelectorLabelView.swift */; };
 		EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
 		EDC82A942D878C61006BBCAB /* SwiftToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,7 +111,14 @@
 		ED66D1EB2E3447CD00D6307C /* SwiftToolboxTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftToolboxTestApp.entitlements; sourceTree = "<group>"; };
 		ED66D1EC2E3447CD00D6307C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardsCompatibility.swift; sourceTree = "<group>"; };
+		ED83929A2E3AE537003FDFBF /* STBNamedPipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBNamedPipe.swift; sourceTree = "<group>"; };
 		ED87D4FA2E3457FF00D72DFC /* STB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STB.swift; sourceTree = "<group>"; };
+		ED9BB0352E3D5C0200EA63B6 /* STBPathList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STBPathList.xib; sourceTree = "<group>"; };
+		ED9BB0362E3D5C0200EA63B6 /* STBPathListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPathListView.swift; sourceTree = "<group>"; };
+		ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBDroppableScrollView.swift; sourceTree = "<group>"; };
+		ED9BB03E2E3D7E4200EA63B6 /* STBDropAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBDropAcceptor.swift; sourceTree = "<group>"; };
+		ED9BB0402E3D82C500EA63B6 /* STBDroppableBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBDroppableBoxView.swift; sourceTree = "<group>"; };
+		ED9BB0422E3D82D600EA63B6 /* STBPathSelectorLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPathSelectorLabelView.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBFilePanels.swift; sourceTree = "<group>"; };
@@ -165,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				ED2BCCF52E087C0500B99ECA /* STBPathSelectorLabelViewController.swift */,
+				ED9BB0402E3D82C500EA63B6 /* STBDroppableBoxView.swift */,
+				ED9BB0422E3D82D600EA63B6 /* STBPathSelectorLabelView.swift */,
 				ED2BCCF62E087C0500B99ECA /* PathSelectorLabelView.xib */,
 			);
 			path = PathSelectorLabel;
@@ -207,6 +223,16 @@
 			path = SwiftToolboxTestApp;
 			sourceTree = "<group>";
 		};
+		ED9BB0372E3D5C0200EA63B6 /* STBPathList */ = {
+			isa = PBXGroup;
+			children = (
+				ED9BB0362E3D5C0200EA63B6 /* STBPathListView.swift */,
+				ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */,
+				ED9BB0352E3D5C0200EA63B6 /* STBPathList.xib */,
+			);
+			path = STBPathList;
+			sourceTree = "<group>";
+		};
 		EDC82A672D87866E006BBCAB = {
 			isa = PBXGroup;
 			children = (
@@ -239,8 +265,11 @@
 				ED6592F02E05EC4C0010673E /* STBKeychain.swift */,
 				ED6593062E05FBFD0010673E /* STBKeychainError.swift */,
 				ED6593082E05FC670010673E /* STBMachine.swift */,
+				ED83929A2E3AE537003FDFBF /* STBNamedPipe.swift */,
 				ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */,
+				ED9BB03E2E3D7E4200EA63B6 /* STBDropAcceptor.swift */,
 				ED2BCCF72E087C0500B99ECA /* PathSelectorLabel */,
+				ED9BB0372E3D5C0200EA63B6 /* STBPathList */,
 				EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */,
 				EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */,
 			);
@@ -445,6 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9BB0382E3D5C0200EA63B6 /* STBPathList.xib in Resources */,
 				ED2BCCF92E087C0500B99ECA /* PathSelectorLabelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,11 +523,17 @@
 				EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */,
 				ED87D4FB2E3457FF00D72DFC /* STB.swift in Sources */,
 				ED6593092E05FC670010673E /* STBMachine.swift in Sources */,
+				ED9BB0412E3D82C500EA63B6 /* STBDroppableBoxView.swift in Sources */,
 				ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */,
+				ED9BB0432E3D82D600EA63B6 /* STBPathSelectorLabelView.swift in Sources */,
 				EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */,
+				ED9BB0392E3D5C0200EA63B6 /* STBPathListView.swift in Sources */,
 				ED2BCCF82E087C0500B99ECA /* STBPathSelectorLabelViewController.swift in Sources */,
 				ED65930B2E05FD7B0010673E /* STBAlerts.swift in Sources */,
 				ED6592F12E05EC4C0010673E /* STBKeychain.swift in Sources */,
+				ED9BB03F2E3D7E4700EA63B6 /* STBDropAcceptor.swift in Sources */,
+				ED9BB03B2E3D5DD700EA63B6 /* STBDroppableScrollView.swift in Sources */,
+				ED83929B2E3AE537003FDFBF /* STBNamedPipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

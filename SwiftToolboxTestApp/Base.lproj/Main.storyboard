@@ -708,105 +708,146 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SwiftToolboxTestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="753" height="366"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3ln-HQ-ocx">
-                                <rect key="frame" x="20" y="150" width="440" height="100"/>
-                                <rows>
-                                    <gridRow id="34r-Af-B8A"/>
-                                    <gridRow id="kp8-fO-BLW"/>
-                                    <gridRow id="Fui-Ls-HNp"/>
-                                    <gridRow id="RAa-jF-4WS"/>
-                                    <gridRow id="yIP-sJ-Du7"/>
-                                    <gridRow id="4YX-2K-Gfh"/>
-                                </rows>
-                                <columns>
-                                    <gridColumn id="qgy-ki-Qa5"/>
-                                    <gridColumn id="c5Z-sO-Rd6"/>
-                                </columns>
-                                <gridCells>
-                                    <gridCell row="34r-Af-B8A" column="qgy-ki-Qa5" id="nNo-0n-u1b">
-                                        <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5TB-MT-W4z">
-                                            <rect key="frame" x="-7" y="73" width="104" height="32"/>
-                                            <buttonCell key="cell" type="push" title="Open Panel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jYg-Vc-BXs">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="openPanel:" target="XfG-lQ-9wD" id="ANK-aO-QY0"/>
-                                            </connections>
-                                        </button>
-                                    </gridCell>
-                                    <gridCell row="34r-Af-B8A" column="c5Z-sO-Rd6" id="EXh-W8-wSw"/>
-                                    <gridCell row="kp8-fO-BLW" column="qgy-ki-Qa5" id="2WV-8a-kIR">
-                                        <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-KW-9Sj">
-                                            <rect key="frame" x="-7" y="49" width="145" height="32"/>
-                                            <buttonCell key="cell" type="push" title="Open Panel Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TPR-j9-H6J">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="openPanelModal:" target="XfG-lQ-9wD" id="R6E-WH-s0k"/>
-                                            </connections>
-                                        </button>
-                                    </gridCell>
-                                    <gridCell row="kp8-fO-BLW" column="c5Z-sO-Rd6" id="mVh-we-Ghp"/>
-                                    <gridCell row="Fui-Ls-HNp" column="qgy-ki-Qa5" id="u72-Gi-GYr">
-                                        <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7OS-GH-PzH">
-                                            <rect key="frame" x="-7" y="25" width="100" height="32"/>
-                                            <buttonCell key="cell" type="push" title="Save Panel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jb5-Jb-ibN">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="savePanel:" target="XfG-lQ-9wD" id="Ygp-1j-ctp"/>
-                                            </connections>
-                                        </button>
-                                    </gridCell>
-                                    <gridCell row="Fui-Ls-HNp" column="c5Z-sO-Rd6" id="KKh-se-Dpz"/>
-                                    <gridCell row="RAa-jF-4WS" column="qgy-ki-Qa5" id="Aql-x3-1QD">
-                                        <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-iq-zVJ">
-                                            <rect key="frame" x="-7" y="1" width="141" height="32"/>
-                                            <buttonCell key="cell" type="push" title="Save Panel Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m7g-7N-dTl">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                        </button>
-                                    </gridCell>
-                                    <gridCell row="RAa-jF-4WS" column="c5Z-sO-Rd6" id="RiJ-FQ-5LO"/>
-                                    <gridCell row="yIP-sJ-Du7" column="qgy-ki-Qa5" id="SWl-sJ-5WV"/>
-                                    <gridCell row="yIP-sJ-Du7" column="c5Z-sO-Rd6" id="FU1-Rj-1aw"/>
-                                    <gridCell row="4YX-2K-Gfh" column="qgy-ki-Qa5" id="CYJ-WG-W1x"/>
-                                    <gridCell row="4YX-2K-Gfh" column="c5Z-sO-Rd6" id="OY0-GY-Xva"/>
-                                </gridCells>
-                            </gridView>
-                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QpM-Ca-k9U">
-                                <rect key="frame" x="18" y="20" width="444" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="1P6-fI-Xsc">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uyu-b5-sA3">
+                                <rect key="frame" x="20" y="20" width="713" height="326"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-BW-sxF">
+                                        <rect key="frame" x="0.0" y="157" width="353" height="169"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5TB-MT-W4z">
+                                                <rect key="frame" x="-7" y="142" width="104" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Open Panel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jYg-Vc-BXs">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="openPanel:" target="XfG-lQ-9wD" id="ANK-aO-QY0"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-KW-9Sj">
+                                                <rect key="frame" x="-7" y="114" width="145" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Open Panel Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TPR-j9-H6J">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="openPanelModal:" target="XfG-lQ-9wD" id="R6E-WH-s0k"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7OS-GH-PzH">
+                                                <rect key="frame" x="-7" y="86" width="100" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Save Panel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jb5-Jb-ibN">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="savePanel:" target="XfG-lQ-9wD" id="Ygp-1j-ctp"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-iq-zVJ">
+                                                <rect key="frame" x="-7" y="58" width="141" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Save Panel Modal" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="m7g-7N-dTl">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QpM-Ca-k9U">
+                                                <rect key="frame" x="-2" y="41" width="264" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="7Zv-cX-zR2"/>
+                                                </constraints>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="(select a path above to display)" id="1P6-fI-Xsc">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6cT-R6-mBV">
+                                                <rect key="frame" x="0.0" y="30" width="96" height="5"/>
+                                            </box>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Px2-Il-sD9" customClass="STBPathSelectorLabelView" customModule="SwiftToolbox">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="mCx-aQ-xUn"/>
+                                                    <constraint firstAttribute="height" constant="24" id="yB0-Cf-ycW"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Px2-Il-sD9" secondAttribute="trailing" constant="20" symbolic="YES" id="DD4-Jj-6pO"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGw-3c-jue">
+                                        <rect key="frame" x="361" y="112" width="352" height="214"/>
+                                        <subviews>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IeO-ms-7t1">
+                                                <rect key="frame" x="-2" y="198" width="57" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Path List" id="tW7-mM-4Nt">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="sCG-wF-IfW" customClass="STBPathListView" customModule="SwiftToolbox">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="190"/>
+                                            </customView>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QpM-Ca-k9U" secondAttribute="trailing" constant="20" symbolic="YES" id="Rhz-YU-0MF"/>
-                            <constraint firstItem="QpM-Ca-k9U" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3ln-HQ-ocx" secondAttribute="bottom" constant="8" symbolic="YES" id="Rmu-gM-eEe"/>
-                            <constraint firstItem="QpM-Ca-k9U" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Snq-SZ-zY1"/>
-                            <constraint firstItem="3ln-HQ-ocx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="fKP-i7-VvE"/>
-                            <constraint firstAttribute="bottom" secondItem="QpM-Ca-k9U" secondAttribute="bottom" constant="20" symbolic="YES" id="jYH-E4-P7W"/>
-                            <constraint firstAttribute="trailing" secondItem="3ln-HQ-ocx" secondAttribute="trailing" constant="20" symbolic="YES" id="rxP-qu-7W2"/>
-                            <constraint firstItem="3ln-HQ-ocx" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="vZk-qT-Tbs"/>
+                            <constraint firstItem="Uyu-b5-sA3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="K4L-iv-6jD"/>
+                            <constraint firstItem="Uyu-b5-sA3" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="OcZ-JW-8x4"/>
+                            <constraint firstAttribute="bottom" secondItem="Uyu-b5-sA3" secondAttribute="bottom" constant="20" symbolic="YES" id="UEV-9o-xPV"/>
+                            <constraint firstAttribute="trailing" secondItem="Uyu-b5-sA3" secondAttribute="trailing" constant="20" symbolic="YES" id="wWQ-yO-E8z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="QpM-Ca-k9U" id="qqx-ST-0aI"/>
+                        <outlet property="pathSelector" destination="Px2-Il-sD9" id="Lk7-8D-fUB"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="108.5" y="754"/>
         </scene>
     </scenes>
 </document>

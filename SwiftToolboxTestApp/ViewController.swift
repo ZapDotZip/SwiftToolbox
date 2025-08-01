@@ -9,9 +9,15 @@ import SwiftToolbox
 class ViewController: NSViewController {
 	
 	@IBOutlet var label: NSTextField!
+	@IBOutlet var pathSelector: STBPathSelectorLabelView!
 	
 	var mainWindow: NSWindow {
 		return NSApplication.shared.keyWindow!
+	}
+	
+	override func viewDidAppear() {
+//		pathSelector.controller.canChooseFiles = false
+//		pathSelector.controller.canChooseDirectories = false
 	}
 	
 	@IBAction func openPanel(_ sender: Any) {
@@ -19,7 +25,7 @@ class ViewController: NSViewController {
 	}
 	
 	@IBAction func openPanelModal(_ sender: Any) {
-		STBFilePanels.openPanelModal(for: mainWindow, message: "Select a file", canSelectMultipleItems: false, canCreateDirectories: false, selectableTypes: [.files(allowedFileExtensions: nil)], handler: { urls in
+		STBFilePanels.openPanelModal(for: mainWindow, message: "Select a file", canSelectMultipleItems: false, canCreateDirectories: false, selectableTypes: [.files(nil)], handler: { urls in
 			self.label.stringValue = urls?.first?.localPath ?? "nothing selected"
 		})
 	}
