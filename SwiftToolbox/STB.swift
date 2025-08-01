@@ -15,4 +15,16 @@ public class STB {
 	public static func log(_ message: String, file: String = #fileID, function: String = #function, line: Int = #line) {
 		NSLog("\(file)#\(function):\(line): \(message)")
 	}
+	
+	/// Returns a URL to a temporary filename in a temporary directory. The temporary directory exists, the file does not.
+	/// - Returns: A URL to a nonexistant file in a temporary directory.
+	public static func temporaryFilename() -> URL {
+		let tempFile = "\(Bundle.main.bundleIdentifier ?? "temp").\(UUID().uuidString.replacingOccurrences(of: "-", with: "").prefix(16))"
+		if #available(macOS 10.12, *) {
+			return FileManager.default.temporaryDirectory.appending(path: tempFile, isDirectory: false)
+		} else {
+			return URL(localPath: NSTemporaryDirectory()).appending(path: tempFile, isDirectory: false)
+		}
+	}
+	
 }
