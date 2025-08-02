@@ -7,6 +7,7 @@ import Cocoa
 
 class STBPathListView: NSView {
 	@IBOutlet private var mainView: NSView!
+	@IBOutlet public var controller: STBPathListController!
 	public required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		let nib = NSNib(nibNamed: "STBPathList", bundle: Bundle(for: STBPathListView.self))

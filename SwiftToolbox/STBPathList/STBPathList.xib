@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="STBPathListView" customModule="SwiftToolbox" customModuleProvider="target">
             <connections>
+                <outlet property="controller" destination="LvQ-Xc-UYw" id="39c-Ij-O0n"/>
                 <outlet property="mainView" destination="c22-O7-iKe" id="3Ez-be-RUJ"/>
             </connections>
         </customObject>
@@ -17,21 +18,21 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="24" horizontalPageScroll="10" verticalLineScroll="24" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-8b-aEE" customClass="STBDroppableScrollView" customModule="SwiftToolbox" customModuleProvider="target">
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-8b-aEE" customClass="STBDroppableScrollView" customModule="SwiftToolbox" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <clipView key="contentView" id="MsT-Ce-LHx">
                         <rect key="frame" x="1" y="1" width="478" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" id="t0B-Wd-qTz">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" autosaveColumns="NO" rowHeight="20" rowSizeStyle="automatic" viewBased="YES" id="t0B-Wd-qTz">
                                 <rect key="frame" x="0.0" y="0.0" width="478" height="270"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <size key="intercellSpacing" width="17" height="0.0"/>
+                                <size key="intercellSpacing" width="2" height="0.0"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="466" minWidth="40" maxWidth="1000" id="2qS-7d-zyT">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Path">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
@@ -43,23 +44,29 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="kMg-UZ-wrl">
-                                                <rect key="frame" x="8" y="0.0" width="461" height="17"/>
+                                                <rect key="frame" x="1" y="0.0" width="461" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISc-Am-ZwH">
-                                                        <rect key="frame" x="3" y="5" width="17" height="6"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CLh-mh-P0A"/>
-                                                    </imageView>
                                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2P-xw-cDG">
-                                                        <rect key="frame" x="25" y="0.0" width="436" height="17"/>
+                                                        <rect key="frame" x="25" y="1" width="436" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Zul-tp-PyE">
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="Zul-tp-PyE">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="kMg-UZ-wrl" name="value" keyPath="objectValue.path" id="KPq-qq-35u"/>
+                                                        </connections>
                                                     </textField>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISc-Am-ZwH">
+                                                        <rect key="frame" x="3" y="1" width="17" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="CLh-mh-P0A"/>
+                                                        <connections>
+                                                            <binding destination="kMg-UZ-wrl" name="value" keyPath="objectValue.icon" id="wx7-8e-hrh"/>
+                                                        </connections>
+                                                    </imageView>
                                                 </subviews>
                                                 <connections>
                                                     <outlet property="imageView" destination="ISc-Am-ZwH" id="YFP-fZ-18E"/>
@@ -69,6 +76,9 @@
                                         </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <binding destination="GkY-Fg-o80" name="content" keyPath="arrangedObjects" id="WQY-Gi-XrL"/>
+                                </connections>
                             </tableView>
                         </subviews>
                     </clipView>
@@ -90,5 +100,19 @@
             </constraints>
             <point key="canvasLocation" x="99" y="154"/>
         </customView>
+        <customObject id="LvQ-Xc-UYw" customClass="STBPathListController" customModule="SwiftToolbox" customModuleProvider="target">
+            <connections>
+                <outlet property="dropView" destination="seQ-8b-aEE" id="F1k-Cn-sFu"/>
+            </connections>
+        </customObject>
+        <arrayController id="GkY-Fg-o80" userLabel="PathArray">
+            <connections>
+                <binding destination="LvQ-Xc-UYw" name="contentArray" keyPath="list" id="0aP-9A-Hcb">
+                    <dictionary key="options">
+                        <bool key="NSDeletesObjectsOnRemove" value="YES"/>
+                    </dictionary>
+                </binding>
+            </connections>
+        </arrayController>
     </objects>
 </document>
