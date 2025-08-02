@@ -8,8 +8,14 @@ import Cocoa
 /// Accepts a single dropped file or folder.
 class STBDroppableBoxView: NSView {
 	@IBOutlet var dropAcceptor: STBDropAcceptor!
-	private var defaultBorderColor: CGColor = NSColor.clear.cgColor
 	
+	private let defaultBorderColor = NSColor.clear.cgColor
+	private let hoverBorderColor = NSColor.selectedControlColor.cgColor
+	
+	var defaultBorderWidth: CGFloat = 0.0
+	var hoverBorderWidth: CGFloat = 1.0
+
+
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
 		commonInit()
@@ -30,7 +36,7 @@ class STBDroppableBoxView: NSView {
 	
 	private func commonInit() {
 		self.wantsLayer = true
-		self.layer!.borderWidth = 1.0
+		self.layer!.borderWidth = defaultBorderWidth
 		self.layer!.borderColor = defaultBorderColor
 		self.layer!.cornerRadius = 6
 	}
@@ -48,7 +54,8 @@ class STBDroppableBoxView: NSView {
 	
 	override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
 		if isDragValid(sender) {
-			self.layer!.borderColor = NSColor.selectedControlColor.cgColor
+			self.layer?.borderWidth = hoverBorderWidth
+			self.layer?.borderColor = hoverBorderColor
 			return .link
 		} else {
 			return NSDragOperation()
@@ -69,10 +76,12 @@ class STBDroppableBoxView: NSView {
 	}
 	
 	override func draggingExited(_ sender: NSDraggingInfo?) {
+		self.layer?.borderWidth = defaultBorderWidth
 		self.layer?.borderColor = defaultBorderColor
 	}
 	
 	override func draggingEnded(_ sender: NSDraggingInfo) {
+		self.layer?.borderWidth = defaultBorderWidth
 		self.layer?.borderColor = defaultBorderColor
 	}
 	
