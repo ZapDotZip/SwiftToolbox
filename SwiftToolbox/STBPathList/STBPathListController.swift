@@ -5,44 +5,16 @@
 
 import Cocoa
 
-public class STBPLPathObject: NSObject {
-	@objc dynamic var path: String {
-		didSet {
-			icon = NSWorkspace.shared.icon(forFile: path)
-		}
-	}
-	@objc dynamic var icon: NSImage
-	init(_ path: String) {
-		self.path = path
-		self.icon = NSWorkspace.shared.icon(forFile: path)
-	}
+public class STBPathListController: NSViewController, STBDropAcceptor, NSMenuItemValidation {
 	
-	static public func == (lhs: STBPLPathObject, rhs: STBPLPathObject) -> Bool {
-		return lhs.path == rhs.path
-	}
-	
-	public override func isEqual(_ object: Any?) -> Bool {
-		guard let obj = object as? STBPLPathObject else {
-			return false
-		}
-		return self.path == obj.path
-	}
-	
-}
-
-public class STBPathListController: NSObject, STBDropAcceptor {
 	public var canChooseFiles = true
 	public var canChooseDirectories = true
 	public var canSelectMultipleItems = true
 	
 	@IBOutlet var dropView: STBDroppableScrollView!
+	@IBOutlet var table: NSTableView!
 	
-	@objc dynamic var list: [STBPLPathObject] = [STBPLPathObject("one"), STBPLPathObject("two")]
-	
-	public override func awakeFromNib() {
-		super.awakeFromNib()
-		dropView.dropAcceptor = self
-	}
+	@objc dynamic var list: [STBPLPathObject] = []
 	
 	public func droppedItems(_ items: [URL]) {
 		addItems(items)
@@ -58,4 +30,66 @@ public class STBPathListController: NSObject, STBDropAcceptor {
 			}
 		})
 	}
+	
+	internal final func isRowValid(_ row: Int) -> Bool {
+		if row < 0 || row >= list.count {
+			return false
+		} else {
+			return true
+		}
+	}
+	
+	public func setList(to list: [URL]) {
+		self.list = list.map({ STBPLPathObject($0.localPath) })
+	}
+	
+	public func removeItem(_ item: URL) {
+		list.removeAll(where: { $0.path == item.localPath })
+	}
+	
+	public func getList() -> [URL] {
+		list.map({ URL(localPath: $0.path) })
+	}
+	
+	@IBAction func copyPath(_ sender: Any) {
+		let str = table.selectedRowIndexes.compactMap ({ row in
+			if isRowValid(row) {
+				return list[row].path
+			}
+			return nil
+		}).joined(separator: "\n")
+		
+		NSPasteboard.general.setString(str, forType: .string)
+	}
+	
+	@IBAction func delete(_ sender: Any) {
+		if table.selectedRowIndexes.count != 0 {
+			print(table.selectedRowIndexes)
+			table.selectedRowIndexes.reversed().forEach { row in
+				guard isRowValid(row) else { return }
+				list.remove(at: row)
+			}
+		} else {
+			guard isRowValid(table.clickedRow) else { return }
+			list.remove(at: table.clickedRow)
+		}
+	}
+	
+	@IBAction @objc func paste(_ sender: AnyObject?) {
+		if let urls = NSPasteboard.general.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly : NSNumber.init(booleanLiteral: true)])?.compactMap ({ return ($0 as? URL) ?? nil }) {
+			addItems(urls)
+		} else if let strings = NSPasteboard.general.string(forType: .string)?.split(separator: "\n").map({ str in
+			return URL(localPath: String(str))
+		}) {
+			addItems(strings)
+		}
+	}
+	
+	public func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+		if isRowValid(table.clickedRow) || menuItem.identifier?.rawValue == "pastePathsMenuItem" {
+			return true
+		}
+		return false
+	}
+
 }

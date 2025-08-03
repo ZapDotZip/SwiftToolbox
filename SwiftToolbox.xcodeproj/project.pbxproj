@@ -32,6 +32,8 @@
 		ED9BB03F2E3D7E4700EA63B6 /* STBDropAcceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB03E2E3D7E4200EA63B6 /* STBDropAcceptor.swift */; };
 		ED9BB0412E3D82C500EA63B6 /* STBDroppableBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0402E3D82C500EA63B6 /* STBDroppableBoxView.swift */; };
 		ED9BB0432E3D82D600EA63B6 /* STBPathSelectorLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0422E3D82D600EA63B6 /* STBPathSelectorLabelView.swift */; };
+		ED9BB0472E3D8E5800EA63B6 /* STBPathListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0462E3D8E5800EA63B6 /* STBPathListController.swift */; };
+		EDC413B42E3EE7090077C042 /* STBPLPathObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC413B32E3EE7090077C042 /* STBPLPathObject.swift */; };
 		EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */; };
 		EDC82A932D878C61006BBCAB /* SwiftToolbox.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */; };
 		EDC82A942D878C61006BBCAB /* SwiftToolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -119,6 +121,8 @@
 		ED9BB03E2E3D7E4200EA63B6 /* STBDropAcceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBDropAcceptor.swift; sourceTree = "<group>"; };
 		ED9BB0402E3D82C500EA63B6 /* STBDroppableBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBDroppableBoxView.swift; sourceTree = "<group>"; };
 		ED9BB0422E3D82D600EA63B6 /* STBPathSelectorLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPathSelectorLabelView.swift; sourceTree = "<group>"; };
+		ED9BB0462E3D8E5800EA63B6 /* STBPathListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPathListController.swift; sourceTree = "<group>"; };
+		EDC413B32E3EE7090077C042 /* STBPLPathObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPLPathObject.swift; sourceTree = "<group>"; };
 		EDC82A712D87866E006BBCAB /* SwiftToolbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A7B2D87866E006BBCAB /* SwiftToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftToolboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC82A8E2D878C61006BBCAB /* STBFilePanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBFilePanels.swift; sourceTree = "<group>"; };
@@ -227,8 +231,10 @@
 			isa = PBXGroup;
 			children = (
 				ED9BB0362E3D5C0200EA63B6 /* STBPathListView.swift */,
-				ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */,
 				ED9BB0352E3D5C0200EA63B6 /* STBPathList.xib */,
+				ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */,
+				ED9BB0462E3D8E5800EA63B6 /* STBPathListController.swift */,
+				EDC413B32E3EE7090077C042 /* STBPLPathObject.swift */,
 			);
 			path = STBPathList;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9BB0472E3D8E5800EA63B6 /* STBPathListController.swift in Sources */,
 				ED6593072E05FBFD0010673E /* STBKeychainError.swift in Sources */,
 				EDC82A922D878C61006BBCAB /* STBFilePanels.swift in Sources */,
 				ED87D4FB2E3457FF00D72DFC /* STB.swift in Sources */,
@@ -533,6 +540,7 @@
 				ED6592F12E05EC4C0010673E /* STBKeychain.swift in Sources */,
 				ED9BB03F2E3D7E4700EA63B6 /* STBDropAcceptor.swift in Sources */,
 				ED9BB03B2E3D5DD700EA63B6 /* STBDroppableScrollView.swift in Sources */,
+				EDC413B42E3EE7090077C042 /* STBPLPathObject.swift in Sources */,
 				ED83929B2E3AE537003FDFBF /* STBNamedPipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

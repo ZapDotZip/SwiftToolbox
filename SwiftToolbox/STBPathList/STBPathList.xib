@@ -8,7 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="STBPathListView" customModule="SwiftToolbox" customModuleProvider="target">
             <connections>
-                <outlet property="controller" destination="LvQ-Xc-UYw" id="39c-Ij-O0n"/>
+                <outlet property="controller" destination="1n9-SC-UYV" id="OBQ-dh-T50"/>
                 <outlet property="mainView" destination="c22-O7-iKe" id="3Ez-be-RUJ"/>
             </connections>
         </customObject>
@@ -31,7 +31,7 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="466" minWidth="40" maxWidth="1000" id="2qS-7d-zyT">
+                                    <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="436" minWidth="40" maxWidth="1000" id="2qS-7d-zyT">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Path">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -44,11 +44,11 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="kMg-UZ-wrl">
-                                                <rect key="frame" x="1" y="0.0" width="461" height="20"/>
+                                                <rect key="frame" x="1" y="0.0" width="446" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2P-xw-cDG">
-                                                        <rect key="frame" x="25" y="1" width="436" height="17"/>
+                                                        <rect key="frame" x="25" y="1" width="421" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="Zul-tp-PyE">
                                                             <font key="font" metaFont="system"/>
@@ -78,6 +78,8 @@
                                 </tableColumns>
                                 <connections>
                                     <binding destination="GkY-Fg-o80" name="content" keyPath="arrangedObjects" id="WQY-Gi-XrL"/>
+                                    <outlet property="controller" destination="1n9-SC-UYV" id="8Xb-QV-4xT"/>
+                                    <outlet property="menu" destination="MKU-c3-erW" id="iJS-e3-IId"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -90,6 +92,9 @@
                         <rect key="frame" x="224" y="17" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
+                    <connections>
+                        <outlet property="dropAcceptor" destination="1n9-SC-UYV" id="Zr5-Ni-pfb"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <constraints>
@@ -100,19 +105,45 @@
             </constraints>
             <point key="canvasLocation" x="99" y="154"/>
         </customView>
-        <customObject id="LvQ-Xc-UYw" customClass="STBPathListController" customModule="SwiftToolbox" customModuleProvider="target">
+        <viewController id="1n9-SC-UYV" customClass="STBPathListController" customModule="SwiftToolbox" customModuleProvider="target">
             <connections>
-                <outlet property="dropView" destination="seQ-8b-aEE" id="F1k-Cn-sFu"/>
+                <outlet property="dropView" destination="seQ-8b-aEE" id="8ph-R4-pxt"/>
+                <outlet property="table" destination="t0B-Wd-qTz" id="WKZ-Em-LsY"/>
+                <outlet property="view" destination="c22-O7-iKe" id="HOZ-vm-Ya7"/>
             </connections>
-        </customObject>
+        </viewController>
         <arrayController id="GkY-Fg-o80" userLabel="PathArray">
             <connections>
-                <binding destination="LvQ-Xc-UYw" name="contentArray" keyPath="list" id="0aP-9A-Hcb">
+                <binding destination="1n9-SC-UYV" name="contentArray" keyPath="list" id="GhE-oY-oZg">
                     <dictionary key="options">
                         <bool key="NSDeletesObjectsOnRemove" value="YES"/>
                     </dictionary>
                 </binding>
             </connections>
         </arrayController>
+        <menu id="MKU-c3-erW">
+            <items>
+                <menuItem title="Copy Path" id="K0O-tw-6pS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="copyPath:" target="1n9-SC-UYV" id="6fo-jr-P3T"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Remove" id="BaL-Ya-xoM">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="delete:" target="1n9-SC-UYV" id="Mtv-re-ocW"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Aur-ng-31A"/>
+                <menuItem title="Paste Paths" identifier="pastePathsMenuItem" id="Wcu-re-gi4">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="paste:" target="1n9-SC-UYV" id="MWo-MF-92U"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="56" y="420"/>
+        </menu>
     </objects>
 </document>
