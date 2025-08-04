@@ -1,5 +1,5 @@
 //
-//  KeychainInterface.swift
+//  STBKeychain.swift
 //  ResticGUI
 //
 

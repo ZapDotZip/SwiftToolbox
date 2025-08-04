@@ -27,7 +27,7 @@ public enum STBKeychainError: Error {
 		}
 	}
 	
-	var errorDescription: String? {
+	public var errorDescription: String? {
 		switch self {
 			case .unableToDecodeResult(msg: let msg):
 				return msg
