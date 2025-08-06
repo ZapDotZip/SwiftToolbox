@@ -22,9 +22,8 @@ public class STBPathListController: NSViewController, STBDropAcceptor, NSMenuIte
 	
 	public func addItems(_ items: [URL]) {
 		list.append(contentsOf: items.compactMap { item in
-			let newItem = STBPLPathObject.init(item.localPath)
-			if !list.contains(newItem) {
-				return newItem
+			if !list.contains(where: { $0.path == item.localPath }) {
+				return STBPLPathObject.init(item.localPath)
 			} else {
 				return nil
 			}
