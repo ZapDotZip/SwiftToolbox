@@ -5,6 +5,7 @@
 
 import Cocoa
 
+/// Container class for `STBPathList`'s row items.
 internal class STBPLPathObject: NSObject {
 	@objc dynamic var path: String {
 		didSet {

@@ -78,8 +78,14 @@ public class STBPathListController: NSViewController, STBDropAcceptor, NSMenuIte
 	
 	/// Gets the current state of the list displayed by the table.
 	/// - Returns: The list of URLs being displayed.
-	public func getList() -> [URL] {
+	public func getURLs() -> [URL] {
 		return list.map({ URL(localPath: $0.path) })
+	}
+	
+	/// Gets the current state of the list displayed by the table.
+	/// - Returns: The list of Strings being displayed.
+	public func getStrings() -> [String] {
+		return list.map({ $0.path })
 	}
 	
 	/// Internally used to accept items dropped on the table. Use ``addItems(_:)`` to add items to the list programmatically.
@@ -102,7 +108,6 @@ public class STBPathListController: NSViewController, STBDropAcceptor, NSMenuIte
 	/// Deletes the item from the list when the user selects the delete menu item.
 	@IBAction private func delete(_ sender: Any) {
 		if table.selectedRowIndexes.count != 0 {
-			print(table.selectedRowIndexes)
 			table.selectedRowIndexes.reversed().forEach { row in
 				guard isRowValid(row) else { return }
 				list.remove(at: row)

@@ -6,7 +6,7 @@
 import Cocoa
 
 /// Accepts many dropped items.
-class STBDroppableScrollView: NSScrollView {
+internal class STBDroppableScrollView: NSScrollView {
 	@IBOutlet var dropAcceptor: STBDropAcceptor!
 	
 	var defaultBorderColor = NSColor.clear.cgColor
