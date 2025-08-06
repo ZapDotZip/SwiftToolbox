@@ -5,7 +5,10 @@
 
 import Cocoa
 
-class STBPathListView: NSView {
+/// A single-column table designed for users to interact with a list of paths. Users can drag and drop, delete, paste a list of paths, or type their own path in.
+///
+/// This class specifically should only be used to set a custom view's class in the interface builder. Use ``STBPathListController`` to interact with the list.
+public class STBPathListView: NSView {
 	@IBOutlet private var mainView: NSView!
 	@IBOutlet public var controller: STBPathListController!
 	public required init?(coder: NSCoder) {
