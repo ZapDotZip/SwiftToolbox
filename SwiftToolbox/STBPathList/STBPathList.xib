@@ -78,7 +78,6 @@
                                 </tableColumns>
                                 <connections>
                                     <binding destination="GkY-Fg-o80" name="content" keyPath="arrangedObjects" id="WQY-Gi-XrL"/>
-                                    <outlet property="controller" destination="1n9-SC-UYV" id="8Xb-QV-4xT"/>
                                     <outlet property="menu" destination="MKU-c3-erW" id="iJS-e3-IId"/>
                                 </connections>
                             </tableView>
@@ -136,6 +135,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Aur-ng-31A"/>
+                <menuItem title="New Item..." identifier="newItemMenuItem" id="Fia-SU-hfa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="newItem:" target="1n9-SC-UYV" id="Uqg-5k-5QE"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Paste Paths" identifier="pastePathsMenuItem" id="Wcu-re-gi4">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

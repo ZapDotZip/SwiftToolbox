@@ -85,8 +85,15 @@ public class STBPathListController: NSViewController, STBDropAcceptor, NSMenuIte
 		}
 	}
 	
+	@IBAction func newItem(_ sender: NSMenuItem) {
+		list.append(STBPLPathObject.init("Type in a path..."))
+		table.editColumn(0, row: list.count - 1, with: nil, select: true)
+	}
+	
 	public func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-		if isRowValid(table.clickedRow) || menuItem.identifier?.rawValue == "pastePathsMenuItem" {
+		if isRowValid(table.clickedRow) ||
+			menuItem.identifier?.rawValue == "pastePathsMenuItem" ||
+			menuItem.identifier?.rawValue == "newItemMenuItem" {
 			return true
 		}
 		return false
