@@ -121,8 +121,8 @@ public class STBPathListController: NSViewController, STBDropAcceptor, NSMenuIte
 	
 	/// Handles importing the pasteboard when the user selects the paste menu item.
 	@IBAction @objc private func paste(_ sender: AnyObject?) {
-		if let urls = NSPasteboard.general.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly : NSNumber.init(booleanLiteral: true)])?.compactMap ({ return ($0 as? URL) ?? nil }) {
-			addItems(urls)
+		if let urls = NSPasteboard.general.readObjects(forClasses: [NSURL.self], options: [.urlReadingFileURLsOnly : NSNumber.init(booleanLiteral: true)]), urls.count > 0 {
+			addItems(urls.compactMap ({ return ($0 as? URL) ?? nil }))
 		} else if let strings = NSPasteboard.general.string(forType: .string)?.split(separator: "\n").map({ str in
 			return URL(localPath: String(str))
 		}) {
