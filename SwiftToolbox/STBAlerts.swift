@@ -19,7 +19,7 @@ public class STBAlerts {
 		let alert = NSAlert()
 		alert.messageText = title
 		alert.informativeText = message
-		alert.alertStyle = .critical
+		alert.alertStyle = style
 		if let buttons {
 			for btn in buttons {
 				alert.addButton(withTitle: btn)
@@ -39,7 +39,7 @@ public class STBAlerts {
 		let alert = NSAlert()
 		alert.messageText = title
 		alert.informativeText = message
-		alert.alertStyle = .critical
+		alert.alertStyle = style
 		alert.addButton(withTitle: destructiveButtonText)
 		alert.addButton(withTitle: "Cancel")
 		if #available(macOS 11.0, *) {
