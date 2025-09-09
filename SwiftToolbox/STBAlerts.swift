@@ -28,6 +28,26 @@ public class STBAlerts {
 		return alert.runModal()
 	}
 	
+	/// Creates and runs an NSAlert for an error.
+	/// - Parameters:
+	///   - title: The title of the alert
+	///   - message: The message of the alert
+	///   - error: Displays the error's localizedDescription below the message.
+	///   - style: The alert style
+	/// - Returns: The alert response.
+	@discardableResult
+	public static func alert(title: String, message: String?, error: Error, style: NSAlert.Style) -> NSApplication.ModalResponse {
+		let alert = NSAlert()
+		alert.messageText = title
+		if let message {
+			alert.informativeText = "\(message)\n\n\(error.localizedDescription)"
+		} else {
+			alert.informativeText = error.localizedDescription
+		}
+		alert.alertStyle = .critical
+		return alert.runModal()
+	}
+	
 	/// Creates and runs an alert for a destructive action
 	/// - Parameters:
 	///   - title: The title of the alert
