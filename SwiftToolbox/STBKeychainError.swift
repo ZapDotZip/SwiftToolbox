@@ -5,8 +5,8 @@
 
 import Foundation
 
-public enum STBKeychainError: Error {
-	case unableToDecodeResult(msg: String = "The data from the keychain could not be decoded to a string.")
+public enum STBKeychainError: Error, CustomStringConvertible, LocalizedError {
+	case unableToDecodeResult
 	case unhandledOSStatusError(msg: String)
 	case itemNotFound(msg: String)
 	case ioError(msg: String)
@@ -25,24 +25,18 @@ public enum STBKeychainError: Error {
 				NSLog("Unhandled OSStatus: \(status)")
 				self = .unhandledOSStatusError(msg: msg)
 		}
+		NSError(domain: NSOSStatusErrorDomain, code: status)
 	}
 	
-	public var errorDescription: String? {
+	public var description: String {
 		switch self {
-			case .unableToDecodeResult(msg: let msg):
-				return msg
-			case .unhandledOSStatusError(msg: let msg):
-				return msg
-			case .itemNotFound(msg: let msg):
-				return msg
-			case .ioError(msg: let msg):
-				return msg
-			case .parameterError(msg: let msg):
-				return msg
-			case .duplicateItem(msg: let msg):
-				return msg
-			case .userCanceled(msg: let msg):
-				return msg
+		case .unableToDecodeResult: return "The data from the keychain could not be decoded to a string."
+		case .unhandledOSStatusError(msg: let msg): return msg
+		case .itemNotFound(msg: let msg): return msg
+		case .ioError(msg: let msg): return msg
+		case .parameterError(msg: let msg): return msg
+		case .duplicateItem(msg: let msg): return msg
+		case .userCanceled(msg: let msg): return msg
 		}
 	}
 }

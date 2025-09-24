@@ -36,7 +36,7 @@ public class STBAlerts {
 	///   - style: The alert style
 	/// - Returns: The alert response.
 	@discardableResult
-	public static func alert(title: String, message: String?, error: Error, style: NSAlert.Style) -> NSApplication.ModalResponse {
+	public static func alert(title: String, message: String?, error: Error, style: NSAlert.Style = .critical) -> NSApplication.ModalResponse {
 		let alert = NSAlert()
 		alert.messageText = title
 		if let message {

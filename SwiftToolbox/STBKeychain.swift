@@ -40,7 +40,7 @@ public class STBKeychain {
 		if let data = result as? Data, let str = String.init(data: data, encoding: .utf8) {
 			return str
 		} else {
-			throw STBKeychainError.unableToDecodeResult()
+			throw STBKeychainError.unableToDecodeResult
 		}
 	}
 	
