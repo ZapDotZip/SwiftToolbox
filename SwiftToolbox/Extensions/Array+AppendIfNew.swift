@@ -27,7 +27,7 @@ extension Array where Element : Equatable {
 	///   `newElements` and *n* is the length of the array, in addition to the overhead for adding new elements.
 	@inlinable public mutating func appendIfNew<S>(contentsOf newElements: S) where Element == S.Element, S : Sequence {
 		for element in newElements {
-			if contains(element) {
+			if !contains(element) {
 				append(element)
 			}
 		}
