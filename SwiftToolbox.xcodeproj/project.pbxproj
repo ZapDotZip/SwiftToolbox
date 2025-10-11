@@ -25,6 +25,7 @@
 		ED66D1F62E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66D1E52E3447CD00D6307C /* SwiftToolboxTestAppUITests.swift */; };
 		ED73B1BD2E26C58100038D68 /* BackwardsCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */; };
 		ED87D4FB2E3457FF00D72DFC /* STB.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87D4FA2E3457FF00D72DFC /* STB.swift */; };
+		ED8B19ED2E99DAD90069E5B7 /* Array+AppendIfNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8B19EB2E99DAD90069E5B7 /* Array+AppendIfNew.swift */; };
 		ED9BB0382E3D5C0200EA63B6 /* STBPathList.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9BB0352E3D5C0200EA63B6 /* STBPathList.xib */; };
 		ED9BB0392E3D5C0200EA63B6 /* STBPathListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB0362E3D5C0200EA63B6 /* STBPathListView.swift */; };
 		ED9BB03B2E3D5DD700EA63B6 /* STBDroppableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */; };
@@ -113,6 +114,7 @@
 		ED66D1EC2E3447CD00D6307C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED73B1BC2E26C58100038D68 /* BackwardsCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardsCompatibility.swift; sourceTree = "<group>"; };
 		ED87D4FA2E3457FF00D72DFC /* STB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STB.swift; sourceTree = "<group>"; };
+		ED8B19EB2E99DAD90069E5B7 /* Array+AppendIfNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AppendIfNew.swift"; sourceTree = "<group>"; };
 		ED9BB0352E3D5C0200EA63B6 /* STBPathList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = STBPathList.xib; sourceTree = "<group>"; };
 		ED9BB0362E3D5C0200EA63B6 /* STBPathListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBPathListView.swift; sourceTree = "<group>"; };
 		ED9BB03A2E3D5DD300EA63B6 /* STBDroppableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBDroppableScrollView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,14 @@
 			path = SwiftToolboxTestApp;
 			sourceTree = "<group>";
 		};
+		ED8B19EC2E99DAD90069E5B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED8B19EB2E99DAD90069E5B7 /* Array+AppendIfNew.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ED9BB0372E3D5C0200EA63B6 /* STBPathList */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +285,7 @@
 				ED9BB0372E3D5C0200EA63B6 /* STBPathList */,
 				EDC82A8F2D878C61006BBCAB /* SwiftToolbox.h */,
 				EDC82A902D878C61006BBCAB /* SwiftToolbox.docc */,
+				ED8B19EC2E99DAD90069E5B7 /* Extensions */,
 			);
 			path = SwiftToolbox;
 			sourceTree = "<group>";
@@ -537,6 +548,7 @@
 				ED6592F12E05EC4C0010673E /* STBKeychain.swift in Sources */,
 				ED9BB03F2E3D7E4700EA63B6 /* STBDropAcceptor.swift in Sources */,
 				ED9BB03B2E3D5DD700EA63B6 /* STBDroppableScrollView.swift in Sources */,
+				ED8B19ED2E99DAD90069E5B7 /* Array+AppendIfNew.swift in Sources */,
 				EDC413B42E3EE7090077C042 /* STBPLPathObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
