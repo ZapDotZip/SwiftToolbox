@@ -25,7 +25,7 @@ public enum STBKeychainError: Error, CustomStringConvertible, LocalizedError {
 				NSLog("Unhandled OSStatus: \(status)")
 				self = .unhandledOSStatusError(msg: msg)
 		}
-		NSError(domain: NSOSStatusErrorDomain, code: status)
+		NSError(domain: NSOSStatusErrorDomain, code: Int(status))
 	}
 	
 	public var description: String {
