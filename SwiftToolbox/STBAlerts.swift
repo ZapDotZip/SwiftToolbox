@@ -48,13 +48,34 @@ public class STBAlerts {
 		return alert.runModal()
 	}
 	
+	/// Creates and runs an NSAlert for an error.
+	/// - Parameters:
+	///   - title: The title of the alert
+	///   - message: The message of the alert
+	///   - error: Displays the error's localizedDescription below the message.
+	///   - style: The alert style
+	///   - showsSuppressionButton: Whether or not to show the suppression button.
+	/// - Returns: The alert response, if the suppression checkbox was checked or not.
+	@discardableResult
+	public static func alert(title: String, message: String?, error: Error, style: NSAlert.Style = .critical, showsSuppressionButton: Bool) -> (NSApplication.ModalResponse, Bool) {
+		let alert = NSAlert()
+		alert.messageText = title
+		if let message {
+			alert.informativeText = "\(message)\n\n\(error.localizedDescription)"
+		} else {
+			alert.informativeText = error.localizedDescription
+		}
+		alert.showsSuppressionButton = showsSuppressionButton
+		alert.alertStyle = .critical
+		return (alert.runModal(), alert.suppressionButton?.state == .on)
+	}
+	
 	/// Creates and runs an alert for a destructive action
 	/// - Parameters:
 	///   - title: The title of the alert
 	///   - message: The message of the alert
 	///   - style: The alert style
 	/// - Returns: Whether or not the user has agreed to the destructive action.
-	@discardableResult
 	public static func destructiveAlert(title: String, message: String, style: NSAlert.Style, destructiveButtonText: String) -> Bool {
 		let alert = NSAlert()
 		alert.messageText = title
