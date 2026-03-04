@@ -90,8 +90,17 @@ public class STBFilePanels {
 			}
 		}
 	}
-	
-	private static func createSavePanel(title: String? = nil, message: String?, nameFieldLabel: String?, nameField: String?, currentDirectory: URL?, isExtensionHidden: Bool, allowedFileExtensions: [String]?) -> NSSavePanel {
+	/// Creates a save panel.
+	/// - Parameters:
+	///   - title: The title of the window, "Save" if `nil`.
+	///   - message: The message displayed above the name field prompt. Nothing if `nil`.
+	///   - nameFieldLabel: The label in front of the name field. "Save As" if `nil`.
+	///   - nameField: The inital text in the name field. "Untitled" if `nil`.
+	///   - currentDirectory: The directory to place the user in. Defaults to the last navigated directory if `nil`.
+	///   - isExtensionHidden: Determines whether or not the file extension is hidden by default.
+	///   - allowedFileExtensions: A list of file extensions allowed, all are allowed if `nil`.
+	/// - Returns: The `URL` the user selected, otherwise `nil` if the user cancelled the panel.
+	public static func createSavePanel(title: String? = nil, message: String? = nil, nameFieldLabel: String? = nil, nameField: String?, currentDirectory: URL? = nil, isExtensionHidden: Bool, allowedFileExtensions: [String]?) -> NSSavePanel {
 		let panel = NSSavePanel()
 		if let title {
 			panel.title = title
