@@ -9,11 +9,10 @@ import Cocoa
 internal class STBDroppableScrollView: NSScrollView {
 	@IBOutlet var dropAcceptor: STBDropAcceptor!
 	
-	var defaultBorderColor = NSColor.clear.cgColor
-	var hoverBorderColor = NSColor.selectedTextBackgroundColor.cgColor
-	
-	var defaultBorderWidth: CGFloat = 0.0
-	var hoverBorderWidth: CGFloat = 2.0
+	private var defaultBorderColor = NSColor.clear.cgColor
+	private var hoverBorderColor = NSColor.selectedTextBackgroundColor.cgColor
+	private var defaultBorderWidth: CGFloat = 0.0
+	private var hoverBorderWidth: CGFloat = 2.0
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -24,7 +23,7 @@ internal class STBDroppableScrollView: NSScrollView {
 		}
 		self.wantsLayer = true
 		defaultBorderColor = self.layer?.borderColor ?? defaultBorderColor
-		defaultBorderWidth = self.layer?.borderWidth ?? 0.0
+		defaultBorderWidth = self.layer?.borderWidth ?? defaultBorderWidth
 	}
 	
 	private final func isDragValid(_ sender: NSDraggingInfo) -> Bool {
